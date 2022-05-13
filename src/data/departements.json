@@ -1,0 +1,1058 @@
+{
+    "01": {
+        "nom": "Ain",
+        "code": "01",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.099444444444444,
+                5.348888888888889
+            ]
+        }
+    },
+    "02": {
+        "nom": "Aisne",
+        "code": "02",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.559444444444445,
+                3.5583333333333336
+            ]
+        }
+    },
+    "03": {
+        "nom": "Allier",
+        "code": "03",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.39361111111111,
+                3.1883333333333335
+            ]
+        }
+    },
+    "04": {
+        "nom": "Alpes-de-Haute-Provence",
+        "code": "04",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.10611111111111,
+                6.243888888888889
+            ]
+        }
+    },
+    "05": {
+        "nom": "Hautes-Alpes",
+        "code": "05",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.66361111111111,
+                6.263055555555556
+            ]
+        }
+    },
+    "06": {
+        "nom": "Alpes-Maritimes",
+        "code": "06",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.9375,
+                7.116388888888889
+            ]
+        }
+    },
+    "07": {
+        "nom": "Ardèche",
+        "code": "07",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.751666666666665,
+                4.424722222222222
+            ]
+        }
+    },
+    "08": {
+        "nom": "Ardennes",
+        "code": "08",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.61555555555555,
+                4.640833333333333
+            ]
+        }
+    },
+    "09": {
+        "nom": "Ariège",
+        "code": "09",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                42.920833333333334,
+                1.5038888888888888
+            ]
+        }
+    },
+    "10": {
+        "nom": "Aube",
+        "code": "10",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.30444444444444,
+                4.161666666666667
+            ]
+        }
+    },
+    "11": {
+        "nom": "Aude",
+        "code": "11",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.10333333333333,
+                2.4141666666666666
+            ]
+        }
+    },
+    "12": {
+        "nom": "Aveyron",
+        "code": "12",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.280277777777776,
+                2.6797222222222223
+            ]
+        }
+    },
+    "13": {
+        "nom": "Bouches-du-Rhône",
+        "code": "13",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.54333333333334,
+                5.086388888888889
+            ]
+        }
+    },
+    "14": {
+        "nom": "Calvados",
+        "code": "14",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.09972222222222,
+                -0.3636111111111111
+            ]
+        }
+    },
+    "15": {
+        "nom": "Cantal",
+        "code": "15",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.05111111111111,
+                2.6686111111111113
+            ]
+        }
+    },
+    "16": {
+        "nom": "Charente",
+        "code": "16",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.71805555555556,
+                0.2016666666666667
+            ]
+        }
+    },
+    "17": {
+        "nom": "Charente-Maritime",
+        "code": "17",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.780833333333334,
+                -0.6744444444444444
+            ]
+        }
+    },
+    "18": {
+        "nom": "Cher",
+        "code": "18",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.06472222222222,
+                2.491111111111111
+            ]
+        }
+    },
+    "19": {
+        "nom": "Corrèze",
+        "code": "19",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.356944444444444,
+                1.8769444444444445
+            ]
+        }
+    },
+    "21": {
+        "nom": "Côte-d'Or",
+        "code": "21",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.42472222222222,
+                4.772222222222222
+            ]
+        }
+    },
+    "22": {
+        "nom": "Côtes-d'Armor",
+        "code": "22",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.44111111111111,
+                -2.8641666666666667
+            ]
+        }
+    },
+    "23": {
+        "nom": "Creuse",
+        "code": "23",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.09027777777778,
+                2.0188888888888887
+            ]
+        }
+    },
+    "24": {
+        "nom": "Dordogne",
+        "code": "24",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.104166666666664,
+                0.7413888888888889
+            ]
+        }
+    },
+    "25": {
+        "nom": "Doubs",
+        "code": "25",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.165277777777774,
+                6.361666666666666
+            ]
+        }
+    },
+    "26": {
+        "nom": "Drôme",
+        "code": "26",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.68416666666667,
+                5.168055555555555
+            ]
+        }
+    },
+    "27": {
+        "nom": "Eure",
+        "code": "27",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.11361111111111,
+                0.9961111111111111
+            ]
+        }
+    },
+    "28": {
+        "nom": "Eure-et-Loir",
+        "code": "28",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.3875,
+                1.3702777777777777
+            ]
+        }
+    },
+    "29": {
+        "nom": "Finistère",
+        "code": "29",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.26111111111111,
+                -4.058888888888889
+            ]
+        }
+    },
+    "30": {
+        "nom": "Gard",
+        "code": "30",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.99333333333333,
+                4.1802777777777775
+            ]
+        }
+    },
+    "31": {
+        "nom": "Haute-Garonne",
+        "code": "31",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.35861111111111,
+                1.1727777777777777
+            ]
+        }
+    },
+    "32": {
+        "nom": "Gers",
+        "code": "32",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.69277777777778,
+                0.45333333333333337
+            ]
+        }
+    },
+    "33": {
+        "nom": "Gironde",
+        "code": "33",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.82527777777778,
+                -0.5752777777777778
+            ]
+        }
+    },
+    "34": {
+        "nom": "Hérault",
+        "code": "34",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.57972222222222,
+                3.3672222222222223
+            ]
+        }
+    },
+    "35": {
+        "nom": "Ille-et-Vilaine",
+        "code": "35",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.154444444444444,
+                -1.638611111111111
+            ]
+        }
+    },
+    "36": {
+        "nom": "Indre",
+        "code": "36",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.77777777777778,
+                1.5758333333333334
+            ]
+        }
+    },
+    "37": {
+        "nom": "Indre-et-Loire",
+        "code": "37",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.25805555555556,
+                0.6913888888888889
+            ]
+        }
+    },
+    "38": {
+        "nom": "Isère",
+        "code": "38",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.263333333333335,
+                5.5761111111111115
+            ]
+        }
+    },
+    "39": {
+        "nom": "Jura",
+        "code": "39",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.72833333333333,
+                5.697777777777778
+            ]
+        }
+    },
+    "40": {
+        "nom": "Landes",
+        "code": "40",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.965555555555554,
+                -0.7838888888888889
+            ]
+        }
+    },
+    "41": {
+        "nom": "Loir-et-Cher",
+        "code": "41",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.61666666666667,
+                1.4294444444444445
+            ]
+        }
+    },
+    "42": {
+        "nom": "Loire",
+        "code": "42",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.72694444444444,
+                4.1658333333333335
+            ]
+        }
+    },
+    "43": {
+        "nom": "Haute-Loire",
+        "code": "43",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.128055555555555,
+                3.806388888888889
+            ]
+        }
+    },
+    "44": {
+        "nom": "Loire-Atlantique",
+        "code": "44",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.36138888888889,
+                -1.6822222222222223
+            ]
+        }
+    },
+    "45": {
+        "nom": "Loiret",
+        "code": "45",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.911944444444444,
+                2.3441666666666667
+            ]
+        }
+    },
+    "46": {
+        "nom": "Lot",
+        "code": "46",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.62416666666667,
+                1.6047222222222222
+            ]
+        }
+    },
+    "47": {
+        "nom": "Lot-et-Garonne",
+        "code": "47",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.3675,
+                0.4602777777777778
+            ]
+        }
+    },
+    "48": {
+        "nom": "Lozère",
+        "code": "48",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.51722222222222,
+                3.500277777777778
+            ]
+        }
+    },
+    "49": {
+        "nom": "Maine-et-Loire",
+        "code": "49",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.39083333333333,
+                -0.5641666666666667
+            ]
+        }
+    },
+    "50": {
+        "nom": "Manche",
+        "code": "50",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.07944444444445,
+                -1.3275
+            ]
+        }
+    },
+    "51": {
+        "nom": "Marne",
+        "code": "51",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.94916666666666,
+                4.238611111111111
+            ]
+        }
+    },
+    "52": {
+        "nom": "Haute-Marne",
+        "code": "52",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.10944444444444,
+                5.226388888888889
+            ]
+        }
+    },
+    "53": {
+        "nom": "Mayenne",
+        "code": "53",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.14666666666667,
+                -0.6580555555555556
+            ]
+        }
+    },
+    "54": {
+        "nom": "Meurthe-et-Moselle",
+        "code": "54",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.786944444444444,
+                6.165
+            ]
+        }
+    },
+    "55": {
+        "nom": "Meuse",
+        "code": "55",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.989444444444445,
+                5.381666666666667
+            ]
+        }
+    },
+    "56": {
+        "nom": "Morbihan",
+        "code": "56",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.84638888888889,
+                -2.81
+            ]
+        }
+    },
+    "57": {
+        "nom": "Moselle",
+        "code": "57",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.03722222222222,
+                6.663333333333333
+            ]
+        }
+    },
+    "58": {
+        "nom": "Nièvre",
+        "code": "58",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.11527777777778,
+                3.504722222222222
+            ]
+        }
+    },
+    "59": {
+        "nom": "Nord",
+        "code": "59",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                50.44722222222222,
+                3.2205555555555554
+            ]
+        }
+    },
+    "60": {
+        "nom": "Oise",
+        "code": "60",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.41027777777778,
+                2.4252777777777776
+            ]
+        }
+    },
+    "61": {
+        "nom": "Orne",
+        "code": "61",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.62361111111111,
+                0.1288888888888889
+            ]
+        }
+    },
+    "62": {
+        "nom": "Pas-de-Calais",
+        "code": "62",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                50.493611111111115,
+                2.288611111111111
+            ]
+        }
+    },
+    "63": {
+        "nom": "Puy-de-Dôme",
+        "code": "63",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.725833333333334,
+                3.140833333333333
+            ]
+        }
+    },
+    "64": {
+        "nom": "Pyrénées-Atlantiques",
+        "code": "64",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.25666666666667,
+                -0.7613888888888889
+            ]
+        }
+    },
+    "65": {
+        "nom": "Hautes-Pyrénées",
+        "code": "65",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.05305555555555,
+                0.1638888888888889
+            ]
+        }
+    },
+    "66": {
+        "nom": "Pyrénées-Orientales",
+        "code": "66",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                42.6,
+                2.522222222222222
+            ]
+        }
+    },
+    "67": {
+        "nom": "Bas-Rhin",
+        "code": "67",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.670833333333334,
+                7.551388888888889
+            ]
+        }
+    },
+    "68": {
+        "nom": "Haut-Rhin",
+        "code": "68",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.85861111111111,
+                7.274166666666667
+            ]
+        }
+    },
+    "69": {
+        "nom": "Rhône",
+        "code": "69",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.87027777777778,
+                4.641388888888889
+            ]
+        }
+    },
+    "70": {
+        "nom": "Haute-Saône",
+        "code": "70",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.64111111111111,
+                6.086111111111111
+            ]
+        }
+    },
+    "71": {
+        "nom": "Saône-et-Loire",
+        "code": "71",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.64472222222222,
+                4.542222222222223
+            ]
+        }
+    },
+    "72": {
+        "nom": "Sarthe",
+        "code": "72",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.99444444444445,
+                0.22222222222222224
+            ]
+        }
+    },
+    "73": {
+        "nom": "Savoie",
+        "code": "73",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.4775,
+                6.443611111111111
+            ]
+        }
+    },
+    "74": {
+        "nom": "Haute-Savoie",
+        "code": "74",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.034444444444446,
+                6.428055555555556
+            ]
+        }
+    },
+    "75": {
+        "nom": "Paris",
+        "code": "75",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.85666666666667,
+                2.342222222222222
+            ]
+        }
+    },
+    "76": {
+        "nom": "Seine-Maritime",
+        "code": "76",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.655,
+                1.0263888888888888
+            ]
+        }
+    },
+    "77": {
+        "nom": "Seine-et-Marne",
+        "code": "77",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.626666666666665,
+                2.9333333333333336
+            ]
+        }
+    },
+    "78": {
+        "nom": "Yvelines",
+        "code": "78",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.815,
+                1.8416666666666668
+            ]
+        }
+    },
+    "79": {
+        "nom": "Deux-Sèvres",
+        "code": "79",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.55555555555556,
+                -0.3172222222222222
+            ]
+        }
+    },
+    "80": {
+        "nom": "Somme",
+        "code": "80",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.95805555555555,
+                2.2777777777777777
+            ]
+        }
+    },
+    "81": {
+        "nom": "Tarn",
+        "code": "81",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.78527777777778,
+                2.1661111111111113
+            ]
+        }
+    },
+    "82": {
+        "nom": "Tarn-et-Garonne",
+        "code": "82",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                44.08583333333333,
+                1.2819444444444443
+            ]
+        }
+    },
+    "83": {
+        "nom": "Var",
+        "code": "83",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.46055555555556,
+                6.218055555555556
+            ]
+        }
+    },
+    "84": {
+        "nom": "Vaucluse",
+        "code": "84",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                43.99388888888889,
+                5.186111111111111
+            ]
+        }
+    },
+    "85": {
+        "nom": "Vendée",
+        "code": "85",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.67472222222222,
+                -1.2977777777777777
+            ]
+        }
+    },
+    "86": {
+        "nom": "Vienne",
+        "code": "86",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                46.56388888888889,
+                0.4602777777777778
+            ]
+        }
+    },
+    "87": {
+        "nom": "Haute-Vienne",
+        "code": "87",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                45.891666666666666,
+                1.2352777777777777
+            ]
+        }
+    },
+    "88": {
+        "nom": "Vosges",
+        "code": "88",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.196666666666665,
+                6.3805555555555555
+            ]
+        }
+    },
+    "89": {
+        "nom": "Yonne",
+        "code": "89",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.83972222222222,
+                3.5644444444444443
+            ]
+        }
+    },
+    "90": {
+        "nom": "Territoire de Belfort",
+        "code": "90",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                47.63166666666667,
+                6.9286111111111115
+            ]
+        }
+    },
+    "91": {
+        "nom": "Essonne",
+        "code": "91",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.522222222222226,
+                2.2430555555555554
+            ]
+        }
+    },
+    "92": {
+        "nom": "Hauts-de-Seine",
+        "code": "92",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.84722222222222,
+                2.245833333333333
+            ]
+        }
+    },
+    "93": {
+        "nom": "Seine-Saint-Denis",
+        "code": "93",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.9175,
+                2.4780555555555557
+            ]
+        }
+    },
+    "94": {
+        "nom": "Val-de-Marne",
+        "code": "94",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                48.7775,
+                2.468888888888889
+            ]
+        }
+    },
+    "95": {
+        "nom": "Val-d'Oise",
+        "code": "95",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                49.08277777777778,
+                2.131111111111111
+            ]
+        }
+    },
+    "2A": {
+        "nom": "Corse-du-Sud",
+        "code": "2A",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                41.86361111111111,
+                8.988055555555556
+            ]
+        }
+    },
+    "2B": {
+        "nom": "Haute-Corse",
+        "code": "2B",
+        "centre": {
+            "type": "Point",
+            "coordinates": [
+                42.39416666666666,
+                9.206388888888888
+            ]
+        }
+    }
+}
