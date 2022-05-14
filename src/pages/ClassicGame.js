@@ -1,14 +1,12 @@
 import { useContext } from 'react';
-import CarteFrance from '../components/CarteFrance';
 import AutocompleteInput from '../components/AutocompleteInput';
 
-const Home = () => {
+const ClassicGame = () => {
     return (
         <div>
-            <CarteFrance></CarteFrance>
             <AutocompleteInput></AutocompleteInput>
         </div>
     )
 };
 
-export default Home;
+export default ClassicGame;
