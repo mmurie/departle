@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import AutocompleteInput from '../components/AutocompleteInput';
+import AutocompleteInput from '../components/autocompletion/AutocompleteInput';
 
 const ClassicGame = () => {
     return (
