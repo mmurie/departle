@@ -1,9 +1,11 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import CarteFrance from '../components/CarteFrance';
 import AutocompleteInput from '../components/autocompletion/AutocompleteInput';
 
 const Home = () => {
+    const deptsList = [];
     const [dept, setdept] = useState("");
+    console.log(dept);
     return (
         <div>
             <CarteFrance></CarteFrance>

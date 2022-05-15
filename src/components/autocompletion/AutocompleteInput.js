@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import AutoCompleteItem from "./AutocompleteItem";
 
 const AutocompleteInput = () => {
-  const [isVisible, setVisibility] = useState(false);
-  const test = "123";
+  const [isVisible = false, setVisibility] = useState(false);
   //const showSuggestion = true;
-  //const showSuggestion = () => setVisibility(true);
-  const hideSuggestion = () => setVisibility(false);
+  const showSuggestion = () => setVisibility(true);
+  //const hideSuggestion = () => setVisibility(false);
   return (
     <div>
       <input>
