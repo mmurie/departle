@@ -5,29 +5,27 @@ const AutocompleteInput = () => {
   const [isVisible = false, setVisibility] = useState(false);
   //const showSuggestion = true;
   const showSuggestion = () => setVisibility(true);
-  //const hideSuggestion = () => setVisibility(false);
+  const hideSuggestion = () => setVisibility(false);
   return (
     <div>
-      <input>
         <label>
           Departement : 
+        </label>
           <input type="text"
           name="search"
           className="search-bar"
           autoComplete="off"
           onClick={showSuggestion}
+          onAbort={hideSuggestion}
           />
-        </label>
-        <div className={`search-result ${
-          isVisible ? "visible" : "invisible"
-        }`}>
+        
+        <div className={`search-result ${isVisible ? "visible" : "invisible"}`}>
           <ul className="list-group">
             <AutoCompleteItem />
             <AutoCompleteItem />
           </ul>
         </div>
         <input type="submit" value="Envoyer" />
-      </input>
     </div>
   );
 };
