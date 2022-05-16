@@ -8,7 +8,8 @@ class Auto extends Component {
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: ""
+      userInput: "",
+      location: ""
     };
   };
 
@@ -34,7 +35,8 @@ class Auto extends Component {
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: e.currentTarget.innerText
+      userInput: e.currentTarget.innerText,
+      location: e.currentTarget.innerText
     });
   };
 
@@ -80,7 +82,7 @@ class Auto extends Component {
     if (showSuggestions && userInput) {
         if (filteredSuggestions.length) {
           suggestionsListComponent = (
-            <ul class="suggestions">
+            <ul className="suggestions">
               {filteredSuggestions.map((suggestion, index) => {
                 let className;
   
@@ -98,7 +100,7 @@ class Auto extends Component {
           );
         } else {
           suggestionsListComponent = (
-            <div class="no-suggestions">
+            <div className="no-suggestions">
               <em>No suggestions available.</em>
             </div>
           );

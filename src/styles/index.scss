@@ -1,7 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "./carte-france";
 
 @import "./autocomplete";
-
 
 html, body, #root {
     min-height: 100%;
