@@ -1,0 +1,17 @@
+$breakTablet: 768px;
+$bleuFonce: #289995;
+$bleuClair: #81E6E2;
+$orangeFonce: #994517;
+$orange: #FF8E52;
+$orangeClair: #E6A481;
+$noir: #000;
+$blanc: #fff;
+$grisClair: #ccc;
+
+$primaryColor: $bleuClair;
+$secondaryColor: $orange;
+
+:root {
+    --background-color: #{$bleuFonce};
+    --text-color: #{$noir};
+}

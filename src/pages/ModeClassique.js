@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import CarteFrance from '../components/CarteFrance';
+import Commune from '../components/Commune';
 
 
 const ModeClassique = () => {
     return (
-        <div>
-            <CarteFrance></CarteFrance>
+        <div id="ModeClassique" className="container game">
+            <Commune></Commune>
         </div>
     )
 };

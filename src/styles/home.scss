@@ -1,5 +1,8 @@
+@import "./_vars";
+
 #home {
     h1 {
         text-align: center;
+        color: var(--text-color);
     }
 }

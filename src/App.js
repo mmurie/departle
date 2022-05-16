@@ -3,10 +3,7 @@ import Home from './pages/Home';
 import ModeClassique from './pages/ModeClassique';
 import Page404 from './pages/404';
 
-import fetchCommunes from './data/getData';
 const App = () => {
-
-  fetchCommunes();
   return (
     <BrowserRouter>
       <Routes>
