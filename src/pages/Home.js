@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
+import ToggleDarkMode from '../components/ToggleDarkMode';
+
 
 const Home = () => {
     return (
@@ -10,6 +12,8 @@ const Home = () => {
                     <li>Mode classique</li>
                 </NavLink>
             </ul>
+
+            <ToggleDarkMode></ToggleDarkMode>
         </div>
     )
 };

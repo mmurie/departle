@@ -12,6 +12,20 @@ $primaryColor: $bleuClair;
 $secondaryColor: $orange;
 
 :root {
-    --background-color: #{$bleuFonce};
+    --background-color: #{$blanc};
     --text-color: #{$noir};
+}
+
+:export {
+    bleuFonce: $bleuFonce;
+    bleuClair: $bleuClair;
+    orangeFonce: $orangeFonce;
+    orange: $orange;
+    orangeClair: $orangeClair;
+    noir: $noir;
+    blanc: $blanc;
+    grisClair: $grisClair;
+
+    primaryColor: $primaryColor;
+    secondaryColor: $secondaryColor;
 }
