@@ -6,7 +6,7 @@ const AutocompleteItem = () => {
             <div className="row">
                 <div className="col-text-left">
                     <p className="mb-0 font-weight-bold line-height-1">
-                        Departement name{" "}
+                       dept: {" "}
                     </p>
                 </div>
             </div>

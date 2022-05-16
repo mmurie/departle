@@ -16,4 +16,5 @@ const getCommunes = async () => {
     console.log(randomCommune);
 
 };
+
 export default getCommunes;
