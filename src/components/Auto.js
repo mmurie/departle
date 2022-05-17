@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
-import deptsList from "../data/departements.json";
+import GuessRow from "../components/GuessRow";
+import Guesses from "./Guesses";
 
 class Auto extends Component {
   constructor(props) {
@@ -95,7 +96,8 @@ class Auto extends Component {
         activeSuggestion,
         filteredSuggestions,
         showSuggestions,
-        userInput
+        userInput,
+        location
       }
     } = this;
 
@@ -130,6 +132,9 @@ class Auto extends Component {
       }
       return (
         <Fragment>
+          <div>
+                <Guesses location={location}/>
+            </div>
           <input
             type="text"
             onChange={onChange}
@@ -137,6 +142,9 @@ class Auto extends Component {
             value={userInput}
           />
           {suggestionsListComponent}
+          <div>
+          <button type="submit">valider</button>
+          </div>
         </Fragment>
       );
     };
