@@ -26,3 +26,8 @@ html, body, #root {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+@import "./_global";
+@import "./_vars";
+@import "./home";
+@import "./carte-france";
+@import "./toggle-dark-mode";

@@ -3,9 +3,10 @@ import Home from './pages/Home';
 import AutoComplete from './pages/AutoComplete';
 import fetchCommunes from './data/getData';
 import ClassicGame from './pages/ClassicGame';
-const App = () => {
+import ModeClassique from './pages/ModeClassique';
+import Page404 from './pages/404';
 
-  fetchCommunes();
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -13,6 +14,8 @@ const App = () => {
         <Route path="*" element={<Home />}> </Route> {/*404*/}
         <Route path="/test" element={<AutoComplete />}> </Route>
         <Route path="/classic" element={<ClassicGame />}> </Route>
+        <Route path="/classique" element={<ModeClassique />}> </Route>
+        <Route path="*" element={<Page404 />}> </Route> {/*404*/}
       </Routes>
     </BrowserRouter>
   );

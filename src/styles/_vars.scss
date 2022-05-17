@@ -1,0 +1,31 @@
+$breakTablet: 768px;
+$bleuFonce: #289995;
+$bleuClair: #81E6E2;
+$orangeFonce: #994517;
+$orange: #FF8E52;
+$orangeClair: #E6A481;
+$noir: #000;
+$blanc: #fff;
+$grisClair: #ccc;
+
+$primaryColor: $bleuClair;
+$secondaryColor: $orange;
+
+:root {
+    --background-color: #{$blanc};
+    --text-color: #{$noir};
+}
+
+:export {
+    bleuFonce: $bleuFonce;
+    bleuClair: $bleuClair;
+    orangeFonce: $orangeFonce;
+    orange: $orange;
+    orangeClair: $orangeClair;
+    noir: $noir;
+    blanc: $blanc;
+    grisClair: $grisClair;
+
+    primaryColor: $primaryColor;
+    secondaryColor: $secondaryColor;
+}
