@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
+import deptsList from "../data/departements.json";
 
 class Auto extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class Auto extends Component {
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: "",
-      location: ""
+      location: "",
+      slice: 0
     };
   };
 
@@ -17,6 +19,11 @@ class Auto extends Component {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
 
+    /*const filteredSuggestions = suggestions.filter(
+      suggestion =>
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );*/
+  
     const filteredSuggestions = suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
@@ -36,19 +43,34 @@ class Auto extends Component {
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: e.currentTarget.innerText,
-      location: e.currentTarget.innerText
+      location: e.currentTarget.innerText.slice(0,this.state.slice)
     });
+    /*for (const [key, value] of Object.entries(deptsList)) {
+        //deptsArr.push(value.nom);
+        if(value.nom == e.currentTarget.innerText){
+          //deptsArr.push(value.nom);
+          deptsArr.push({code: key, value: deptsList[key]});
+        }
+        
+        //Object.keys(deptsArr).push(key => key, nom => deptsArr[key].nom)
+    }
+    console.log(deptsArr);*/
   };
 
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
+    const { slice } = this.props;
 
+    //press Enter
     if (e.keyCode === 13) {
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion]
+        userInput: filteredSuggestions[activeSuggestion],
+        location: filteredSuggestions[activeSuggestion].slice(0,slice)
       });
+      console.log(filteredSuggestions[activeSuggestion].slice(0,slice));
+      //arrow key Up
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
         return;

@@ -14,12 +14,14 @@ class GuessRow extends Component {
 
     
   onChange = e => {
-    //const { suggestions } = this.props;
+    const { location } = this.props;
     //const location = e.currentTarget.value;
+    console.log("location = ");
+    console.log(location);
 
     this.setState({
       disabled: false,
-      location: e.currentTarget.value
+      location: location
     });
   };
 
@@ -27,13 +29,14 @@ class GuessRow extends Component {
         const {
           onChange,
           state: {
-            id,
+            //id,
             disabled,
-            location,
+            //location,
             distance,
             direction
           }
         } = this;
+        const { id, location } = this.props;
         return(
             <Fragment>
             <div className={`flex text-2xl w-full justify-evenly items-center col-span-6 border-2 h-8 rounded`}>
@@ -43,7 +46,7 @@ class GuessRow extends Component {
                     value={id+" - "+location}
                     onChange={onChange}
                     readOnly
-                    disabled={disabled}
+                    disabled={false}
                 />
             <input
                     type="text"
