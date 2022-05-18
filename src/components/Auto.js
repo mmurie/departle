@@ -14,7 +14,8 @@ class Auto extends Component {
       userInput: "",
       location: "",
       slice: 0,
-      data: []
+      data: [],
+      errorMessage: ""
     };
   };
 
@@ -84,7 +85,7 @@ class Auto extends Component {
 
   getData(location) {
     //const { location } = this.props;
-    const { data } = this.state;
+    const { data, errorMessage } = this.state;
     console.log("getData");
     console.log(location);
     if(location !== "" && data.length < 6){
@@ -95,6 +96,8 @@ class Auto extends Component {
       console.log("data = ");
       console.log(data);
       }else{
+        this.setState({errorMessage: "Reponse deja utilisee"});
+        //errorMessage = "Reponse deja utilisee";
         console.log("Departement deja cite !")
       }
   } else {
@@ -115,7 +118,8 @@ class Auto extends Component {
         showSuggestions,
         userInput,
         location,
-        data
+        data,
+        errorMessage
       }
     } = this;
 
@@ -168,7 +172,10 @@ class Auto extends Component {
           <button onClick={getData.bind(location)}>valider</button>
           </div>
             </div>
-          
+
+            <div>
+              <p className="text-red-600">{errorMessage}</p>
+            </div>          
         </Fragment>
       );
     };
