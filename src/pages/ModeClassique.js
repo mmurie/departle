@@ -1,12 +1,13 @@
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Commune from '../components/Commune';
 import Autocomplete from "../components/Auto";
 import deptsList from "../data/departements.json";
+import { getRandomCommune } from '../data/getData';
 
 
 const ModeClassique = () => {
     const deptsArr = [];
-    const [location, setLocation] = useState("loc");
+    const [commune, setCommune] = useState({});
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
@@ -20,7 +21,7 @@ const ModeClassique = () => {
             
             <div className="search-bar-container justify-evenly text-2xl">    
                 <Autocomplete suggestions={deptsArr} slice={2}/>
-            </div>
+            </div>            
         </div>
     )
 };
