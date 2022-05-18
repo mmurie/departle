@@ -5,6 +5,7 @@ import ClassicGame from './pages/ClassicGame';
 import ModeClassique from './pages/ModeClassique';
 import ModeCarte from './pages/ModeCarte';
 import ModeForme from './pages/ModeForme';
+import PageStats from './pages/PageStats';
 import Page404 from './pages/404';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/classique" element={<ModeClassique />}> </Route>
         <Route path="/carte" element={<ModeCarte />}> </Route>
         <Route path="/forme" element={<ModeForme />}> </Route>
+        <Route path="/stats" element={<PageStats />}> </Route>
         <Route path="*" element={<Page404 />}> </Route> {/*404*/}
       </Routes>
     </BrowserRouter>
