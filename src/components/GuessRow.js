@@ -48,13 +48,26 @@ class GuessRow extends Component {
                     disabled={false}
                 />
             <input
-            className="rounded text-center"
+                    className="rounded text-center w-56 ease-in-out"
                     type="text"
                     value={distance}
                     readOnly
                     disabled={disabled}
                 />
+                <input
+                    className="rounded text-center w-50 ease-in-out"
+                    type="text"
+                    value={"direction"}
+                    readOnly
+                />
+                <input
+                    className="rounded text-center w-20 ease-in-out"
+                    type="text"
+                    value={"X ✓"}
+                    readOnly
+                />
             </div>
+            
             <br/>
 
                 

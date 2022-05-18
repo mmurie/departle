@@ -155,7 +155,9 @@ class Auto extends Component {
             </div>
             <br/>
             <br/>
-          <input
+            <div>
+            <input
+            className="w-full"
             type="text"
             onChange={onChange}
             onKeyDown={onKeyDown}
@@ -165,6 +167,8 @@ class Auto extends Component {
           <div className="bouton">
           <button onClick={getData.bind(location)}>valider</button>
           </div>
+            </div>
+          
         </Fragment>
       );
     };
