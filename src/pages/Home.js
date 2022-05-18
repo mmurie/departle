@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
 import ToggleDarkMode from '../components/ToggleDarkMode';
 
-
 const Home = () => {
     return (
         <div id="home" className="container">
@@ -16,6 +15,9 @@ const Home = () => {
                 </NavLink>
                 <NavLink to="/forme" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
                     <li>Mode forme</li>
+                </NavLink>
+                <NavLink to="/stats" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
+                    <li>Statistiques</li>
                 </NavLink>
             </ul>
 
