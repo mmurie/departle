@@ -18,7 +18,7 @@ const ModeClassique = () => {
         <div id="ModeClassique" className="container game">
             <Commune></Commune>
             
-            <div className="search-bar-container">    
+            <div className="search-bar-container justify-evenly text-2xl w-full">    
                 <Autocomplete suggestions={deptsArr} slice={2}/>
             </div>
         </div>

@@ -9,41 +9,29 @@ class Guesses extends Component {
         rowCount: 6,
         guesses: [],
         location: "",
-        counter: 0
+        counter: 0,
+        data: []
       };
     };
 
     render() {
         const {
+        //getData,
           state: {
             userInput,
             rowCount,
             counter
           }
         } = this;
-        const{ location } = this.props;
+        const{ location, data } = this.props
 
-        let data = [];
-
-        if(location != ""){
-            
-            console.log(deptsList[location]);
-            //data = deptsList[location];
-            data.push({key:deptsList[location].code, locationName: deptsList[location].nom})
-            //const locationName = deptsList[location].nom;
-            //console.log(locationName);
-        }
-        console.log("data = ");
-        console.log(data);
-
-        /*<GuessRow id={rowCount} location={location} disabled={true}/>*/
         return (
             <Fragment>
                 <div>
-                    <div className="grid grid-cols-7 gap-1 text-center">
+                    <div>
                         {Array.from(Array(data.length).keys()).map((index) => (
                         <GuessRow
-                            id={data.index}
+                            id={index}
                             location={data[index].locationName}
                             countryInputRef={location}
                         />

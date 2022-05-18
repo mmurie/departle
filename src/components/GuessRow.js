@@ -6,7 +6,7 @@ class GuessRow extends Component {
         this.state = {
           id: 0,
           disabled: true,
-          location: "blbl",
+          location: "",
           distance: 0,
           direction: ""
         };
@@ -15,7 +15,6 @@ class GuessRow extends Component {
     
   onChange = e => {
     const { location } = this.props;
-    //const location = e.currentTarget.value;
     console.log("location = ");
     console.log(location);
 
@@ -39,9 +38,9 @@ class GuessRow extends Component {
         const { id, location } = this.props;
         return(
             <Fragment>
-            <div className={`flex text-2xl w-full justify-evenly items-center col-span-6 border-2 h-8 rounded`}>
-            test
+            <div className="gap-4 inline-block flex text-2xl w-full justify-evenly items-center col-span-6 animate-reveal text-center">
             <input
+            className="rounded text-center"
                     type="text"
                     value={id+" - "+location}
                     onChange={onChange}
@@ -49,15 +48,15 @@ class GuessRow extends Component {
                     disabled={false}
                 />
             <input
+            className="rounded text-center"
                     type="text"
                     value={distance}
                     readOnly
                     disabled={disabled}
                 />
             </div>
-            <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
+            <br/>
 
-            </div>
                 
             </Fragment>
         );

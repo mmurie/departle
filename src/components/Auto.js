@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
 import GuessRow from "../components/GuessRow";
 import Guesses from "./Guesses";
+import deptsList from "../data/departements.json";
 
 class Auto extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Auto extends Component {
       showSuggestions: false,
       userInput: "",
       location: "",
-      slice: 0
+      slice: 0,
+      data: []
     };
   };
 
@@ -39,27 +41,19 @@ class Auto extends Component {
   };
 
   onClick = e => {
+    const { slice } = this.props;
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: e.currentTarget.innerText,
-      location: e.currentTarget.innerText.slice(0,this.state.slice)
+      location: e.currentTarget.innerText.slice(0,slice)
     });
-    /*for (const [key, value] of Object.entries(deptsList)) {
-        //deptsArr.push(value.nom);
-        if(value.nom == e.currentTarget.innerText){
-          //deptsArr.push(value.nom);
-          deptsArr.push({code: key, value: deptsList[key]});
-        }
-        
-        //Object.keys(deptsArr).push(key => key, nom => deptsArr[key].nom)
-    }
-    console.log(deptsArr);*/
+    //this.getData(e.currentTarget.innerText.slice(0,slice));
   };
 
   onKeyDown = e => {
-    const { activeSuggestion, filteredSuggestions } = this.state;
+    const { activeSuggestion, filteredSuggestions, data } = this.state;
     const { slice } = this.props;
 
     //press Enter
@@ -70,6 +64,7 @@ class Auto extends Component {
         userInput: filteredSuggestions[activeSuggestion],
         location: filteredSuggestions[activeSuggestion].slice(0,slice)
       });
+      this.getData(filteredSuggestions[activeSuggestion].slice(0,slice));
       console.log(filteredSuggestions[activeSuggestion].slice(0,slice));
       //arrow key Up
     } else if (e.keyCode === 38) {
@@ -87,17 +82,40 @@ class Auto extends Component {
     }
   };
 
+  getData(location) {
+    //const { location } = this.props;
+    const { data } = this.state;
+    console.log("getData");
+    console.log(location);
+    if(location !== "" && data.length < 6){
+      if(!data.some(item => item.code == location)){
+        //console.log(location);
+      data.push({code: location, locationName: deptsList[location].nom});
+      //this.setState({data: data});
+      console.log("data = ");
+      console.log(data);
+      }else{
+        console.log("Departement deja cite !")
+      }
+  } else {
+    console.log("PERDU !")
+  }
+  };
+ 
+
   render() {
     const {
       onChange,
       onClick,
       onKeyDown,
+      getData,
       state: {
         activeSuggestion,
         filteredSuggestions,
         showSuggestions,
         userInput,
-        location
+        location,
+        data
       }
     } = this;
 
@@ -133,8 +151,10 @@ class Auto extends Component {
       return (
         <Fragment>
           <div>
-                <Guesses location={location}/>
+                <Guesses location={location} data={data}/>
             </div>
+            <br/>
+            <br/>
           <input
             type="text"
             onChange={onChange}
@@ -142,8 +162,8 @@ class Auto extends Component {
             value={userInput}
           />
           {suggestionsListComponent}
-          <div>
-          <button type="submit">valider</button>
+          <div className="bouton">
+          <button onClick={getData.bind(location)}>valider</button>
           </div>
         </Fragment>
       );
