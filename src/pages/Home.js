@@ -11,6 +11,12 @@ const Home = () => {
                 <NavLink to="/classique" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
                     <li>Mode classique</li>
                 </NavLink>
+                <NavLink to="/carte" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
+                    <li>Mode carte</li>
+                </NavLink>
+                <NavLink to="/forme" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
+                    <li>Mode forme</li>
+                </NavLink>
             </ul>
 
             <ToggleDarkMode></ToggleDarkMode>
