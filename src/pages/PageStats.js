@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
-import StatsGraph from '../components/StatsGraph';
+import Stats from '../components/Stats';
 
 export const statsColors = {
     "Classique": {
@@ -24,7 +24,7 @@ export const statsColors = {
 const PageStats = () => {
     return (
         <div id="pageStats" className="container">
-            <StatsGraph></StatsGraph>
+            <Stats></Stats>
         </div>
     )
 };

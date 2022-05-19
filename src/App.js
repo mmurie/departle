@@ -9,6 +9,19 @@ import PageStats from './pages/PageStats';
 import Page404 from './pages/404';
 
 const App = () => {
+  let datasets = {};
+  let n = 0;
+
+  ["Classique", "Carte", "Forme", "Global"].forEach((r) => {
+    datasets[r] = [];
+    for (let i = 1; i < 100; i++) {
+      datasets[r].push({ x: i, y: (Math.sin(i / 3) + 1) * 3 - n })
+    }
+
+    n++;
+  });
+  localStorage.setItem("userData", JSON.stringify(datasets));
+
   return (
     <BrowserRouter>
       <Routes>
