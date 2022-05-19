@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { useState } from 'react';
 import { statsColors } from "../pages/PageStats";
 
@@ -106,4 +106,4 @@ const StatsGraph = () => {
     );
 };
 
-export default StatsGraph;
+export default StatsGraph;*/

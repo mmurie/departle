@@ -1,13 +1,25 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Commune from '../components/Commune';
+import Game from '../components/Game';
 import Autocomplete from "../components/Auto";
 import deptsList from "../data/departements.json";
-import { getRandomCommune } from '../data/getData';
 
 
 const ModeClassique = () => {
     const deptsArr = [];
-    const [commune, setCommune] = useState({});
+    //const [commune, setCommune] = useState({});
+    //create ref for commune
+    let childRef= React.createRef();
+    
+    console.log(childRef);
+
+    const [communeData, setCommuneData] = useState('');
+  
+  const parentToChild = () => {
+    setCommuneData("This is data from Parent Component to the Child Component.");
+    console.log("data returned = ");
+    console.log(communeData);
+  }
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
@@ -17,7 +29,11 @@ const ModeClassique = () => {
     }
     return (
         <div id="ModeClassique" className="container game">
-            <Commune></Commune>
+            <Commune parentToChild={Commune.commune}></Commune>
+            <Game />
+            <div>
+                <button onClick={() => parentToChild()}>Click Parent</button>
+            </div>
             
             <div className="search-bar-container justify-evenly text-2xl">    
                 <Autocomplete suggestions={deptsArr} slice={2}/>
