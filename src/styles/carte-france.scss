@@ -1,6 +1,8 @@
 @import "./_vars";
 
 #CarteFrance {
+    width: 50rem;
+    height: 50rem;
 
     [id^="dep_"] {
         transform-box: fill-box;

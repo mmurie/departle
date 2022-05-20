@@ -15,7 +15,6 @@ function setDistanceClass(targetDep, guessDep) {
 
     n = parseInt(n);
     n = n > 32 ? 32 : n < 1 ? 1 : n;
-    console.log(n);
     return "distance-" + n;
 }
 
@@ -34,7 +33,7 @@ const CarteFrance = () => {
     }, []);
 
     return (
-        <svg id="CarteFrance" xmlns="http://www.w3.org/2000/svg" width="907" height="1000">
+        <svg id="CarteFrance" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 907 1000" width="907" height="1000">
             <g fill="none" stroke="#86aae0" strokeWidth="1.5">
                 <path id="corsica_separating_line" d="M783 1e3v-130l119-78" />
             </g>
