@@ -11,7 +11,7 @@ function setDistanceClass(targetDep, guessDep) {
     if (distance <= 1) {
         return "distance-0";
     }
-    let n = (1 / 1000 * 32 * distance);
+    let n = (1 / 700 * 32 * (distance - 50));
 
     n = parseInt(n);
     n = n > 32 ? 32 : n < 1 ? 1 : n;
