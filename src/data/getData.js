@@ -1,7 +1,7 @@
 import React from "react";
 import Departements from "./departements.json";
 
-const randomProperty = function (obj) {
+export const randomProperty = function (obj) {
     var keys = Object.keys(obj);
     return obj[keys[keys.length * Math.random() << 0]];
 };

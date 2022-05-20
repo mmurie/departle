@@ -1,5 +1,38 @@
 
+import { useEffect, useState } from 'react';
+import Departements from "../data/departements.json";
+import { randomProperty } from "../data/getData";
+import { getDistanceBetweenTwoPoints } from "../utils/coordinatesFunctions"
+
+function setDistanceClass(targetDep, guessDep) {
+    let t_coords = Departements[targetDep]["centre"]["coordinates"];
+    let g_coords = Departements[guessDep]["centre"]["coordinates"];
+    let distance = getDistanceBetweenTwoPoints(t_coords[0], t_coords[1], g_coords[0], g_coords[1]);
+    if (distance <= 1) {
+        return "distance-0";
+    }
+    let n = (1 / 1000 * 32 * distance);
+
+    n = parseInt(n);
+    n = n > 32 ? 32 : n < 1 ? 1 : n;
+    console.log(n);
+    return "distance-" + n;
+}
+
 const CarteFrance = () => {
+    const [departement, setDepartement] = useState({});
+
+    //Quand le composant est monté
+    useEffect(() => {
+        let randomDep = randomProperty(Departements);
+        setDepartement(randomDep);
+
+        Object.keys(Departements).forEach((d) => {
+            const dep = document.getElementById("dep_" + d.toLowerCase());
+            dep.classList.add(setDistanceClass(randomDep["code"], d));
+        });
+    }, []);
+
     return (
         <svg id="CarteFrance" xmlns="http://www.w3.org/2000/svg" width="907" height="1000">
             <g fill="none" stroke="#86aae0" strokeWidth="1.5">

@@ -1,15 +1,22 @@
 @import "./_vars";
 
 #CarteFrance {
+
     [id^="dep_"] {
         transform-box: fill-box;
         transform-origin: center;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.3s ease-in-out;
         fill: $grisClair;
+        position: relative;
 
-        &:hover {
-            cursor: pointer;
-            fill: $secondaryColor;
+        @for $i from 1 through 32 {
+            &.distance-#{$i} {
+                fill: nth($scale, $i);
+            }
+        }
+
+        &.distance-0 {
+            fill: $orangeFonce;
         }
     }
 }
