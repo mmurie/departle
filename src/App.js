@@ -7,20 +7,14 @@ import ModeCarte from './pages/ModeCarte';
 import ModeForme from './pages/ModeForme';
 import PageStats from './pages/PageStats';
 import Page404 from './pages/404';
+import updateHistory from './data/history';
 
 const App = () => {
-  let datasets = {};
-  let n = 0;
 
-  ["Classique", "Carte", "Forme", "Global"].forEach((r) => {
-    datasets[r] = [];
-    for (let i = 1; i < 100; i++) {
-      datasets[r].push({ x: i, y: (Math.sin(i / 3) + 1) * 3 - n })
-    }
+  /*["Classique", "Carte", "Forme"].forEach((r) => {
+    updateHistory(r, parseInt((Math.random() * (7 - 1 + 1)), 10) + 1);
 
-    n++;
-  });
-  localStorage.setItem("userData", JSON.stringify(datasets));
+  });*/
 
   return (
     <BrowserRouter>

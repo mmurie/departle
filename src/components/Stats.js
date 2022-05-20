@@ -33,7 +33,7 @@ const StatsGraph = () => {
 
     let colors = statsColors;
 
-    if (!window.localStorage.getItem("userData")) {
+    if (!localStorage.getItem("history")) {
         return (
             <div>
                 Pas de stats disponibles...
@@ -41,7 +41,7 @@ const StatsGraph = () => {
         );
     }
 
-    let datasets = JSON.parse(localStorage.getItem("userData"));
+    let datasets = JSON.parse(localStorage.getItem("history"));
 
     const optionsGraph = {
         responsive: true,
@@ -59,7 +59,6 @@ const StatsGraph = () => {
                         return tooltipItem[0].label + (tooltipItem[0].label > 1 ? "ème" : "ère") + " partie";
                     },
                     label: function (tooltipItem, data) {
-                        console.log(tooltipItem);
                         return parseFloat(tooltipItem.formattedValue) >= 7 ? "échec" : tooltipItem.formattedValue + " essai" + (parseFloat(tooltipItem.formattedValue) > 1 ? "s" : ""); //TODO !!!!
                     }
                 }
@@ -74,7 +73,7 @@ const StatsGraph = () => {
 
             yAxis: {
                 reverse: true,
-                min: 0,
+                min: 1,
                 max: 7,
                 ticks: {
                     callback: function (value) {
@@ -119,17 +118,29 @@ const StatsGraph = () => {
         },
         scales: {
             yAxis: {
-                min: 0,
+                ticks: {
+                    beginAtZero: true,
+                    callback: function (value) { if (value % 1 === 0) { return value; } }
+                }
             }
         }
     };
+
+    let filteredDataBar = [];
+    for (let i = 1; i <= 7; i++) {
+        let tmpData = datasets[selectedRadio].filter(val => {
+            if (val.y === i)
+                return true;
+        });
+        filteredDataBar.push({ x: i, y: tmpData.length });
+    }
 
     const dataBar = {
         labels: labelsBars,
         datasets: [
             {
                 label: "Nombre de parties",
-                data: datasets[selectedRadio],
+                data: filteredDataBar,
                 borderColor: colors[selectedRadio]["borderColor"],
                 backgroundColor: colors[selectedRadio]["backgroundColor"],
             }
