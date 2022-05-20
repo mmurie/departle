@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import { getRandomCommune } from "../data/getData";
 
-const Commune = () => {
+const Commune = (props) => {
     const [commune, setCommune] = useState({});
 
     //Quand le composant est monté
     useEffect(() => {
         getRandomCommune().then(c => {
             setCommune(c);
-            console.log(c);
+            if (props.setCommuneParent) {
+                props.setCommuneParent(c);
+            }
         });
     }, []);
 

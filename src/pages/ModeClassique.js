@@ -25,19 +25,18 @@ const ModeClassique = () => {
     for (const [key, value] of Object.entries(deptsList)) {
         //deptsArr.push(value.nom);
         //deptsArr.push({code: key, value: suggestions[key].nom});
-        deptsArr.push( key + " - "+ deptsList[key].nom);
+        deptsArr.push(key + " - " + deptsList[key].nom);
     }
+
     return (
         <div id="ModeClassique" className="container game">
-            <Commune parentToChild={Commune.commune}></Commune>
-            <Game />
-            <div>
-                <button onClick={() => parentToChild()}>Click Parent</button>
+            <Commune setCommuneParent={setCommune}></Commune>
+
+            <div className="search-bar-container justify-evenly text-2xl">
+                <Autocomplete suggestions={deptsArr} slice={2} />
             </div>
-            
-            <div className="search-bar-container justify-evenly text-2xl">    
-                <Autocomplete suggestions={deptsArr} slice={2}/>
-            </div>            
+
+            <div>{JSON.stringify(commune)}</div>
         </div>
     )
 };
