@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Commune from '../components/Commune';
 import {getDistanceBetweenTwoPoints} from '../utils/coordinatesFunctions';
 import Autocomplete from "../components/Auto";
@@ -117,7 +117,12 @@ export const getData = (location, data) => {
     console.log("PERDU !")
   }
   //this.verifyData(data);
-  this.Game.verifyData(data);
+  console.log("Before verfiy: ");
+  console.log(data);
+  //access to Game verify data to access props
+  this.verifyData(data);
+  //const StaticData = data;
+  //Game(data);
   
     //return [dataGuesses, setDataGuesses];
     //this.setData(data);
