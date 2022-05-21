@@ -7,19 +7,8 @@ import deptsList from "../data/departements.json";
 
 const ModeClassique = () => {
     const deptsArr = [];
-    //const [commune, setCommune] = useState({});
-    //create ref for commune
-    let childRef= React.createRef();
-    
-    console.log(childRef);
 
-    const [communeData, setCommuneData] = useState('');
-  
-  const parentToChild = () => {
-    setCommuneData("This is data from Parent Component to the Child Component.");
-    console.log("data returned = ");
-    console.log(communeData);
-  }
+    const [commune, setCommune] = useState({});
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
@@ -37,6 +26,8 @@ const ModeClassique = () => {
             </div>
 
             <div>{JSON.stringify(commune)}</div>
+
+            <div><Game mode={"ModeClassique"} location={commune}/></div>
         </div>
     )
 };
