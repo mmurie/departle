@@ -45,4 +45,4 @@ function svgSize(dep) {
     let lenX = Math.max.apply(Math, pointsX) - Math.min.apply(Math, pointsX);
     let lenY = Math.max.apply(Math, pointsY) - Math.min.apply(Math, pointsY);
     return Math.max(lenX, lenY);
-}
+};

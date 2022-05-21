@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, useEffect } from "react";
 import '../styles/auto.scss';
 import GuessRow from "../components/GuessRow";
 import Guesses from "./Guesses";
 import deptsList from "../data/departements.json";
+import { getData } from "./Game";
 
 class Auto extends Component {
   constructor(props) {
@@ -54,6 +55,10 @@ class Auto extends Component {
 
   onClick = e => {
     const { slice } = this.props;
+    const { data } = this.state;
+    
+    getData(e.currentTarget.innerText.slice(0, slice), data);
+    
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -61,7 +66,8 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    this.getData(e.currentTarget.innerText.slice(0, slice));
+    //this.getData(e.currentTarget.innerText.slice(0, slice));
+    //this.getData(e.currentTarget.innerText.slice(0, slice));
   };
 
   onKeyDown = e => {
@@ -78,7 +84,7 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      this.getData(filteredSuggestions[activeSuggestion].slice(0, slice));
+      getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
       console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
     } else if (e.keyCode === 38) {
@@ -96,10 +102,11 @@ class Auto extends Component {
     }
   };
 
-  getData(location) {
-    if (!this.state) return;
+  //getData(location) {
+    //if (!this.state) return;
     //const { location } = this.props;
-    const { data, errorMessage } = this.state;
+    
+    /*const { data, errorMessage } = this.state;
     console.log("getData");
     console.log(location);
     if (location !== "" && data.length < 6) {
@@ -116,8 +123,8 @@ class Auto extends Component {
       }
     } else {
       console.log("PERDU !")
-    }
-  };
+    }*/
+  //};
 
 
   render() {
@@ -183,7 +190,7 @@ class Auto extends Component {
           />
           {suggestionsListComponent}
           <div className="bouton">
-            <button onClick={getData.bind(location)}>valider</button>
+            <button >valider</button>
           </div>
         </div>
 

@@ -10,10 +10,13 @@ const Game = (props) => {
     const [commune, setCommune] = useState({});
 
     const [count, setCount] = useState(0);
+    const [data, setData] = useState({});
 
     const maxTry = 6;
 
     const deptsArr = [];
+
+    //const data = [];
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
@@ -22,21 +25,27 @@ const Game = (props) => {
         deptsArr.push(key + " - " + deptsList[key].nom);
     };
 
-    /*const verifyData = (props) => {
-      //TODO 
-      console.log("test !!!");
-    };*/
-    const onTest = () => {
-      console.log("123 test.")
+    const verifyData = (data) => {
+      console.log("test !!");
+      console.log(data);
+      console.log(props.location);
+      const guess = data.pop();
+      if(guess.code === props.code){
+        console.log("G.G !!!!!!");
+      }
+      
     };
-    function sum(a, b) {
-      console.log("a+b")
-      return a + b;
-    }
+
+    const onTest = () => {
+      console.log("123 test.");
+      console.log("123: "+props.mode);
+    };
+
 
     switch(props.mode){
       case "ModeClassique":
-        verifyData(props.mode);
+        //verifyData(props.mode);
+        onTest();
          /*return (
            <div id="ModeClassique" className="container game">
              <p>location = {JSON.stringify(props.location)}</p>
@@ -53,18 +62,15 @@ const Game = (props) => {
       break;
       case "ModeForme":
         verifyData(props.mode);
-        const theSum = props.sum(1,1);
-        console.log(sum(1,1));
-        return(
+        /*return(
           <div id="ModeClassique" className="container game">
           <FormeDepartement></FormeDepartement>
 
-          <p>{theSum}</p>
           <div className="search-bar-container">
               <Autocomplete suggestions={deptsArr} slice={2} />
           </div>
       </div>
-        );
+        );*/
      break;
      case "ModeCarte":
       ;
@@ -73,7 +79,7 @@ const Game = (props) => {
 
     return (
         <div>
-          <p>locationGuess = {props.locationGuess}</p>
+          
         </div>
       );
 };
@@ -84,13 +90,38 @@ export const initalizeGame = {
   //TODO reprend les donnees du cache si partie en cours
 };
 
-export const verifyData = (props) => {
+/*const verifyData = (props) => {
   console.log("test !!");
   console.log(props);
-};
-
-export const getData = () => {
   
+};*/
+
+export const getData = (location, data) => {
+  //const [dataGuesses, setDataGuesses] = useState({});
+  //const { data, errorMessage } = this.state;
+  console.log("getData");
+  console.log(location);
+  if (location !== "" && data.length < 6) {
+    if (!data.some(item => item.code == location)) {
+      //console.log(location);
+      data.push({ code: location, locationName: deptsList[location].nom });
+      //this.setState({data: data});
+      console.log("data = ");
+      console.log(data);
+    } else {
+      const errorMessage = "Reponse deja utilisee";
+      //errorMessage = "Reponse deja utilisee";
+      console.log("Departement deja cite !")
+    }
+  } else {
+    console.log("PERDU !")
+  }
+  //this.verifyData(data);
+  this.Game.verifyData(data);
+  
+    //return [dataGuesses, setDataGuesses];
+    //this.setData(data);
+    //return data;
 };
 
 /*export function verifyData(props) {
