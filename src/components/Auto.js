@@ -27,11 +27,22 @@ class Auto extends Component {
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );*/
-  
-    const filteredSuggestions = suggestions.filter(
+
+    //Priorité des suggestions : numéro de département -> au début du nom -> contenu dans le nom
+    let filteredSuggestions = suggestions.filter(
       suggestion =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) == 0
     );
+
+    filteredSuggestions = filteredSuggestions.concat(suggestions.filter(
+      suggestion =>
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) == 5
+    ));
+
+    filteredSuggestions = filteredSuggestions.concat(suggestions.filter(
+      suggestion =>
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > 5
+    ));
 
     this.setState({
       activeSuggestion: 0,
@@ -47,10 +58,10 @@ class Auto extends Component {
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: e.currentTarget.innerText,
-      location: e.currentTarget.innerText.slice(0,slice)
+      userInput: "",
+      location: e.currentTarget.innerText.slice(0, slice)
     });
-    //this.getData(e.currentTarget.innerText.slice(0,slice));
+    this.getData(e.currentTarget.innerText.slice(0, slice));
   };
 
   onKeyDown = e => {
@@ -59,14 +70,16 @@ class Auto extends Component {
 
     //press Enter
     if (e.keyCode === 13) {
+      if (!filteredSuggestions[activeSuggestion]) return;
       this.setState({
         activeSuggestion: 0,
+        filteredSuggestions: [],
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion],
-        location: filteredSuggestions[activeSuggestion].slice(0,slice)
+        userInput: "",
+        location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      this.getData(filteredSuggestions[activeSuggestion].slice(0,slice));
-      console.log(filteredSuggestions[activeSuggestion].slice(0,slice));
+      this.getData(filteredSuggestions[activeSuggestion].slice(0, slice));
+      console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
@@ -76,7 +89,7 @@ class Auto extends Component {
     }
     // User pressed the down arrow, increment the index
     else if (e.keyCode === 40) {
-      if (activeSuggestion - 1 === filteredSuggestions.length) {
+      if (activeSuggestion + 1 >= filteredSuggestions.length) {
         return;
       }
       this.setState({ activeSuggestion: activeSuggestion + 1 });
@@ -84,27 +97,28 @@ class Auto extends Component {
   };
 
   getData(location) {
+    if (!this.state) return;
     //const { location } = this.props;
     const { data, errorMessage } = this.state;
     console.log("getData");
     console.log(location);
-    if(location !== "" && data.length < 6){
-      if(!data.some(item => item.code == location)){
+    if (location !== "" && data.length < 6) {
+      if (!data.some(item => item.code == location)) {
         //console.log(location);
-      data.push({code: location, locationName: deptsList[location].nom});
-      //this.setState({data: data});
-      console.log("data = ");
-      console.log(data);
-      }else{
-        this.setState({errorMessage: "Reponse deja utilisee"});
+        data.push({ code: location, locationName: deptsList[location].nom });
+        //this.setState({data: data});
+        console.log("data = ");
+        console.log(data);
+      } else {
+        this.setState({ errorMessage: "Reponse deja utilisee" });
         //errorMessage = "Reponse deja utilisee";
         console.log("Departement deja cite !")
       }
-  } else {
-    console.log("PERDU !")
-  }
+    } else {
+      console.log("PERDU !")
+    }
   };
- 
+
 
   render() {
     const {
@@ -126,41 +140,41 @@ class Auto extends Component {
     let suggestionsListComponent;
 
     if (showSuggestions && userInput) {
-        if (filteredSuggestions.length) {
-          suggestionsListComponent = (
-            <ul className="suggestions">
-              {filteredSuggestions.map((suggestion, index) => {
-                let className;
-  
-                // Flag the active suggestion with a class
-                if (index === activeSuggestion) {
-                  className = "suggestion-active";
-                }
-                return (
-                  <li className={className} key={suggestion} onClick={onClick}>
-                    {suggestion}
-                  </li>
-                );
-              })}
-            </ul>
-          );
-        } else {
-          suggestionsListComponent = (
-            <div className="no-suggestions">
-              <em>No suggestions available.</em>
-            </div>
-          );
-        }
+      if (filteredSuggestions.length) {
+        suggestionsListComponent = (
+          <ul className="suggestions">
+            {filteredSuggestions.map((suggestion, index) => {
+              let className;
+
+              // Flag the active suggestion with a class
+              if (index === activeSuggestion) {
+                className = "suggestion-active";
+              }
+              return (
+                <li className={className} key={suggestion} onClick={onClick}>
+                  {suggestion}
+                </li>
+              );
+            })}
+          </ul>
+        );
+      } else {
+        suggestionsListComponent = (
+          <div className="no-suggestions">
+            <em>No suggestions available.</em>
+          </div>
+        );
       }
-      return (
-        <Fragment>
-          <div>
-                <Guesses location={location} data={data}/>
-            </div>
-            <br/>
-            <br/>
-            <div>
-            <input
+    }
+    return (
+      <Fragment>
+        <div>
+          <Guesses location={location} data={data} />
+        </div>
+        <br />
+        <br />
+        <div>
+          <input
             className="w-full"
             type="text"
             onChange={onChange}
@@ -169,16 +183,16 @@ class Auto extends Component {
           />
           {suggestionsListComponent}
           <div className="bouton">
-          <button onClick={getData.bind(location)}>valider</button>
+            <button onClick={getData.bind(location)}>valider</button>
           </div>
-            </div>
+        </div>
 
-            <div>
-              <p className="text-red-600">{errorMessage}</p>
-            </div>          
-        </Fragment>
-      );
-    };
+        <div>
+          <p className="text-red-600">{errorMessage}</p>
+        </div>
+      </Fragment>
+    );
   };
-  
-  export default Auto;
+};
+
+export default Auto;

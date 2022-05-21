@@ -13,7 +13,6 @@ const App = () => {
 
   /*["Classique", "Carte", "Forme"].forEach((r) => {
     updateHistory(r, parseInt((Math.random() * (7 - 1 + 1)), 10) + 1);
-
   });*/
 
   return (

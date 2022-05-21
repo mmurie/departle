@@ -8,24 +8,23 @@ const AutocompleteInput = () => {
   const hideSuggestion = () => setVisibility(false);
   return (
     <div>
-        <label>
-          Departement : 
-        </label>
-          <input type="text"
-          name="search"
-          className="search-bar"
-          autoComplete="off"
-          onClick={showSuggestion}
-          onAbort={hideSuggestion}
-          />
-        
-        <div className={`search-result ${isVisible ? "visible" : "invisible"}`}>
-          <ul className="list-group">
-            <AutoCompleteItem />
-            <AutoCompleteItem />
-          </ul>
-        </div>
-        <input type="submit" value="Envoyer" />
+      <label>
+        Departement :
+      </label>
+      <input type="text"
+        name="search"
+        className="search-bar"
+        autoComplete="off"
+        onClick={showSuggestion}
+        onAbort={hideSuggestion}
+      />
+
+      <div className={`search-result ${isVisible ? "visible" : "invisible"}`}>
+        <ul className="list-group">
+          <AutoCompleteItem />
+        </ul>
+      </div>
+      <input type="submit" value="Envoyer" />
     </div>
   );
 };
