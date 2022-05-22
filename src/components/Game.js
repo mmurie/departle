@@ -16,6 +16,14 @@ const Game = (props) => {
 
     const deptsArr = [];
 
+    //const tests = SetGameData;
+    //setData(SetGameData);
+    //console.log(data);
+
+    //const useGuessData = getData();
+
+    //console.log(useGuessData);
+
     //const data = [];
 
     //Concatenate in order to obtain a string array
@@ -96,7 +104,7 @@ export const initalizeGame = {
   
 };*/
 
-export const getData = (location, data) => {
+/*export const getData = (location, data) => {
   //const [dataGuesses, setDataGuesses] = useState({});
   //const { data, errorMessage } = this.state;
   console.log("getData");
@@ -120,13 +128,25 @@ export const getData = (location, data) => {
   console.log("Before verfiy: ");
   console.log(data);
   //access to Game verify data to access props
-  this.verifyData(data);
+  //Game().verifyData(data);
+  //this.useGuessData();
+  //Test.setTests(data);
+  Test(data);
   //const StaticData = data;
   //Game(data);
   
     //return [dataGuesses, setDataGuesses];
     //this.setData(data);
     //return data;
+};*/
+
+const Test = (data) => {
+  //const [tests, setTests] = useState({});
+  //setTests(data);
+  const tests = data;
+  console.log("tests = ");
+  console.log(tests);
+  Game("test").verifyData(data);
 };
 
 /*export function verifyData(props) {
@@ -134,6 +154,17 @@ export const getData = (location, data) => {
   console.log("test !!");
   console.log(props.mode);
 };*/
+
+/*const classes = useGuessData();
+
+const useGuessData = makeGuessData(data => ({
+  location: {
+    nom: "testLocation"
+  },
+  table: {
+    minWidth: 650
+  }
+}));*/
 
 
 export const endGame = {

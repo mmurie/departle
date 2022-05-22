@@ -3,7 +3,8 @@ import '../styles/auto.scss';
 import GuessRow from "../components/GuessRow";
 import Guesses from "./Guesses";
 import deptsList from "../data/departements.json";
-import { getData } from "./Game";
+//import { getData } from "./Game";
+import {setGameData} from './SetGameData';
 
 class Auto extends Component {
   constructor(props) {
@@ -57,7 +58,8 @@ class Auto extends Component {
     const { slice } = this.props;
     const { data } = this.state;
     
-    getData(e.currentTarget.innerText.slice(0, slice), data);
+    //getData(e.currentTarget.innerText.slice(0, slice), data);
+    setGameData(e.currentTarget.innerText.slice(0, slice), data);
     
     this.setState({
       activeSuggestion: 0,
@@ -84,7 +86,9 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
+      //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
+      setGameData(e.currentTarget.innerText.slice(0, slice), data);
+
       console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
     } else if (e.keyCode === 38) {
