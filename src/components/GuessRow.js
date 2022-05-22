@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import GameComponent from "./GameComponent";
 
 class GuessRow extends Component {
     constructor(props) {
@@ -69,6 +70,8 @@ class GuessRow extends Component {
             </div>
             
             <br/>
+
+            <GameComponent data={location}/>
 
                 
             </Fragment>

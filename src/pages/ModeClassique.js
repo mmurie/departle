@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Commune from '../components/Commune';
 import Game from '../components/Game';
+import GameComponent from '../components/GameComponent';
 import Autocomplete from "../components/Auto";
 import deptsList from "../data/departements.json";
 
@@ -27,9 +28,10 @@ const ModeClassique = () => {
 
             <div>{JSON.stringify(commune)}</div>
 
-            <div><Game mode={"ModeClassique"} location={commune}/></div>
+            <div><GameComponent guessData={commune}/></div>
         </div>
     )
+    //<div><Game mode={"ModeClassique"} location={commune}/></div>
 };
 
 export default ModeClassique;

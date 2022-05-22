@@ -4,7 +4,8 @@ import GuessRow from "../components/GuessRow";
 import Guesses from "./Guesses";
 import deptsList from "../data/departements.json";
 //import { getData } from "./Game";
-import {setGameData} from './SetGameData';
+//import {setGameData} from './SetGameData';
+import SetGameData from '../data/SetGameData';
 
 class Auto extends Component {
   constructor(props) {
@@ -58,8 +59,9 @@ class Auto extends Component {
     const { slice } = this.props;
     const { data } = this.state;
     
+    //getData(e.currentTarget.innerText.slice(0, slice));
     //getData(e.currentTarget.innerText.slice(0, slice), data);
-    setGameData(e.currentTarget.innerText.slice(0, slice), data);
+    SetGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
     
     this.setState({
       activeSuggestion: 0,
@@ -86,8 +88,9 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
+      //getData(e.currentTarget.innerText.slice(0, slice));
       //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
-      setGameData(e.currentTarget.innerText.slice(0, slice), data);
+      SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
 
       console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
@@ -106,7 +109,16 @@ class Auto extends Component {
     }
   };
 
-  //getData(location) {
+  /*getData(location) {
+    const [guessData, setGuessData] = useState({});
+    useEffect(() => {
+      getRandomCommune().then(c => {
+          setCommune(c);
+          if (props.setCommuneParent) {
+              props.setCommuneParent(c);
+          }
+      });
+  }, []);
     //if (!this.state) return;
     //const { location } = this.props;
     

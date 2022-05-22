@@ -4,21 +4,31 @@ import {getDistanceBetweenTwoPoints} from '../utils/coordinatesFunctions';
 import Autocomplete from "../components/Auto";
 import deptsList from "../data/departements.json";
 import FormeDepartement from '../components/FormeDepartement';
+import SetGameData from '../data/SetGameData';
 
 const Game = (props) => {
     //TODO get data from commune
-    const [commune, setCommune] = useState({});
+    //const [commune, setCommune] = useState({});
 
-    const [count, setCount] = useState(0);
-    const [data, setData] = useState({});
+    //const [count, setCount] = useState(0);
+    //const [data, setData] = useState({});
 
     const maxTry = 6;
 
     const deptsArr = [];
 
-    //const tests = SetGameData;
-    //setData(SetGameData);
-    //console.log(data);
+    const [guessData, setGuessData] = useState({});
+
+    //Quand le composant est monté
+    useEffect(() => {
+        SetGameData().then(c => {
+            setGuessData(c);
+            /*if (props.setCommuneParent) {
+                props.setCommuneParent(c);
+            }*/
+        });
+    }, []);
+ 
 
     //const useGuessData = getData();
 
@@ -167,6 +177,8 @@ const useGuessData = makeGuessData(data => ({
 }));*/
 
 
-export const endGame = {
-  //TODO reprend les donnees du cache si partie en cours
+export const endGame = () => {
+  //TODO affiche un message et affiche la ligne reponse en vert
+  const errorMessage = "Gagne !";
+
 };

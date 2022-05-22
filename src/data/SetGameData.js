@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import deptsList from "../data/departements.json";
 
-export const setGameData = (location, data) => {
+const SetGameData = (location, data) => {
+
+  //setGuessData(data);
   console.log(data);
+  //JSON.parse(data);
+  //console.log(data);
     //const [dataGuesses, setDataGuesses] = useState({});
     //const { data, errorMessage } = this.state;
     console.log("getData");
@@ -34,7 +38,7 @@ export const setGameData = (location, data) => {
     //const [usedata, setData] = useState({});
     //setData(data)
     
-    //return data;
+    return JSON.stringify(data) ;
     
     //const StaticData = data;
     //Game(data);
@@ -50,4 +54,4 @@ export const setGameData = (location, data) => {
     return usedata;
   };*/
 
-  //export default SetGameData;
+export default SetGameData;
