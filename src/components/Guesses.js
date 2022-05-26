@@ -34,6 +34,8 @@ class Guesses extends Component {
                             id={index}
                             location={data[index].locationName}
                             countryInputRef={location}
+                            distance={data[index].distance} 
+                            direction={data[index].direction} 
                         />
                         ))}
                     </div>

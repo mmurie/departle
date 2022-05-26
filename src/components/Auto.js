@@ -21,16 +21,14 @@ class Auto extends Component {
       slice: 0,
       data: [],
       errorMessage: "",
-      guessData: {}
+      guessData: {}, 
+      distance: 0
     };
   };
 
   onChange = e => {
     const { suggestions, guessData } = this.props;
     const userInput = e.currentTarget.value;
-
-    console.log("onclick");
-    console.log(guessData);
 
     /*const filteredSuggestions = suggestions.filter(
       suggestion =>
@@ -99,7 +97,7 @@ class Auto extends Component {
       //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
       SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
 
-      console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
+      //console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
@@ -149,6 +147,16 @@ class Auto extends Component {
     }*/
   //};
 
+  //Callback GameComponent for distance
+  handleCallback = (childDataDistance, childDataBearing) =>{
+    if(childDataDistance && childDataBearing){
+      //this.setState({distance: childData});
+      this.state.distance = childDataDistance;
+      this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
+      this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
+    }
+  }
+
 
   render() {
     const {
@@ -164,7 +172,8 @@ class Auto extends Component {
         location,
         data,
         errorMessage,
-        guessData
+        guessData,
+        distance
       }
     } = this;
 
@@ -200,8 +209,8 @@ class Auto extends Component {
     return (
       <Fragment>
         <div>
+          <GameComponent guessData={guessData} data={data} parentCallback={this.handleCallback} />
           <Guesses location={location} data={data} />
-          <GameComponent guessData={guessData} data={data} />
         </div>
         <br />
         <br />

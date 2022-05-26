@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import {getDistanceBetweenTwoPoints, getBearingBetweenTwoPoints} from '../utils/coordinatesFunctions'
 
 class GameComponent extends Component {
     constructor(props) {
@@ -30,57 +31,27 @@ class GameComponent extends Component {
         if(userInput["code"] == guessData.code.slice(0,2)){
             console.log("touve, bien joue !");
         }else{
-            console.log("nope !")
+            console.log("nope !");
+            //console.log("guessData.coordinates");
+            //console.log(guessData.centre.coordinates[1]);
+            this.getDistance(guessData, userInput);
         }
     };
 
-    /*this.setState({
-        data: data
-    });*/
   };
 
-  /*componentDidMount(){
-      //if(this.props.guessData)
-      this.setState({guessData: this.state.guessData});
-  }*/
-
-  /*componentDidUpdate(prevProps, prevState) {
-      console.log("conponentdidupdate");
-    if (prevState.guessData !== this.props.guessData) {
-      console.log('pokemons state has changed.')
-      this.setState({guessData: prevProps.guessData});
-      this.guessDataImmutable = this.state.guessData;
-    }
-    console.log("guessdata componentdidupdate");
-    console.log(this.state.guessData);
-  }*/
-  
-
-  /*componentDidUpdate(prevProps){
-      console.log("prevprops.guessdata");
-      console.log(prevProps.guessData);
-    if(prevProps.guessData != this.state.guessData && this.props.guessData!={}){
-        this.setState ({guessData: prevProps.guessData});
-    };
-    console.log("value guessData");
-    console.log(this.state.guessData);
-  };*/
-
-
-  /*verify = e => {
-      if(data){
-          if(data == guessData){
-              console.log("touve, bien joue !");
-          }else{
-              console.log("nope !")
-          }
-      };
-  };*/
+  getDistance = (guessData, userInput) => {
+    const { distance, direction } = this.state;
+    this.state.distance=getDistanceBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
+    this.state.direction=getBearingBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
+    //callback to Auto
+    this.props.parentCallback(distance, direction);
+  }
 
     render() {
         const {
           onChange,
-          onInit,
+          getDistance,
           state: {
             //id,
             //location,

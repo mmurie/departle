@@ -32,14 +32,12 @@ class GuessRow extends Component {
             //id,
             disabled,
             //location,
-            distance,
-            direction
+            //distance,
+            //direction
           }
         } = this;
-        const { id, location } = this.props;
-        //GameComponent.bind(location);
-        //GameComponent.apply(onChange(location));
-        //<GameComponent data={location}/>
+        const { id, location, distance, direction } = this.props;
+        
         return(
             <Fragment>
             <div className="gap-4 inline-block flex text-2xl w-full justify-evenly items-center col-span-6 animate-reveal text-center">
@@ -61,7 +59,7 @@ class GuessRow extends Component {
                 <input
                     className="rounded text-center w-50 ease-in-out"
                     type="text"
-                    value={"direction"}
+                    value={direction}
                     readOnly
                 />
                 <input
