@@ -37,6 +37,9 @@ class GuessRow extends Component {
           }
         } = this;
         const { id, location } = this.props;
+        //GameComponent.bind(location);
+        //GameComponent.apply(onChange(location));
+        //<GameComponent data={location}/>
         return(
             <Fragment>
             <div className="gap-4 inline-block flex text-2xl w-full justify-evenly items-center col-span-6 animate-reveal text-center">
@@ -71,7 +74,6 @@ class GuessRow extends Component {
             
             <br/>
 
-            <GameComponent data={location}/>
 
                 
             </Fragment>

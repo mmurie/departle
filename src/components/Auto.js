@@ -6,6 +6,8 @@ import deptsList from "../data/departements.json";
 //import { getData } from "./Game";
 //import {setGameData} from './SetGameData';
 import SetGameData from '../data/SetGameData';
+import GameComponent from "./GameComponent";
+
 
 class Auto extends Component {
   constructor(props) {
@@ -18,13 +20,17 @@ class Auto extends Component {
       location: "",
       slice: 0,
       data: [],
-      errorMessage: ""
+      errorMessage: "",
+      guessData: {}
     };
   };
 
   onChange = e => {
-    const { suggestions } = this.props;
+    const { suggestions, guessData } = this.props;
     const userInput = e.currentTarget.value;
+
+    console.log("onclick");
+    console.log(guessData);
 
     /*const filteredSuggestions = suggestions.filter(
       suggestion =>
@@ -51,7 +57,8 @@ class Auto extends Component {
       activeSuggestion: 0,
       filteredSuggestions,
       showSuggestions: true,
-      userInput: e.currentTarget.value
+      userInput: e.currentTarget.value,
+      guessData: guessData
     });
   };
 
@@ -68,7 +75,7 @@ class Auto extends Component {
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: "",
-      location: e.currentTarget.innerText.slice(0, slice)
+      location: e.currentTarget.innerText.slice(0, slice),
     });
     //this.getData(e.currentTarget.innerText.slice(0, slice));
     //this.getData(e.currentTarget.innerText.slice(0, slice));
@@ -156,7 +163,8 @@ class Auto extends Component {
         userInput,
         location,
         data,
-        errorMessage
+        errorMessage,
+        guessData
       }
     } = this;
 
@@ -193,6 +201,7 @@ class Auto extends Component {
       <Fragment>
         <div>
           <Guesses location={location} data={data} />
+          <GameComponent guessData={guessData} data={data} />
         </div>
         <br />
         <br />

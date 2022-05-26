@@ -23,14 +23,15 @@ const ModeClassique = () => {
             <Commune setCommuneParent={setCommune}></Commune>
 
             <div className="search-bar-container justify-evenly text-2xl">
-                <Autocomplete suggestions={deptsArr} slice={2} />
+                <Autocomplete suggestions={deptsArr} slice={2} guessData={commune}/>
             </div>
 
             <div>{JSON.stringify(commune)}</div>
 
-            <div><GameComponent guessData={commune}/></div>
+            
         </div>
     )
+    //<div><GameComponent guessData={commune} data={{}}/></div>
     //<div><Game mode={"ModeClassique"} location={commune}/></div>
 };
 
