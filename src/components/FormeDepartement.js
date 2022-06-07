@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 import { getRandomSvgDepartement } from "../data/getData";
 
 
-const FormeDepartement = () => {
+const FormeDepartement = (props) => {
 
     const [departement, setDepartement] = useState({});
 
     //Quand le composant est monté
     useEffect(() => {
         getRandomSvgDepartement().then(d => {
+            //d["code"] = d["id"];
             setDepartement(d);
             console.log(d);
+            if (props.setDepartementParent) {
+                props.setDepartementParent(d);
+            }
         });
     }, []);
 
