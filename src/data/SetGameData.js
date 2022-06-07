@@ -28,7 +28,7 @@ const SetGameData = (location, data) => {
       console.log("PERDU !")
     }
     //this.verifyData(data);
-    console.log("Before verfiy: ");
+    console.log("Before verify: ");
     console.log(data);
     //access to Game verify data to access props
     //Game().verifyData(data);

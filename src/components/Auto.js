@@ -148,12 +148,13 @@ class Auto extends Component {
   //};
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing) =>{
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol) =>{
     if(childDataDistance && childDataBearing){
       //this.setState({distance: childData});
       this.state.distance = childDataDistance;
       this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
       this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
+      this.state.data[this.state.data.length-1]["symbol"] = childDataSymbol;
     }
   }
 

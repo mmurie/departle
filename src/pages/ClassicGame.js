@@ -20,14 +20,15 @@ const ClassicGame = () => {
         //deptsArr.push({code: key, value: suggestions[key].nom});
         deptsArr.push( key + " - "+ deptsList[key].nom);
     }
-    
-    return (
-        <div>
-            <div>
+
+    /*<div>
                 <GuessRow id={1} location={"lol"}/>          
                 <GuessRow id={2} location={""}/>
                 <GuessRow id={3} location={"123"}/>
-            </div>
+            </div>*/
+    
+    return (
+        <div>
             <div className="search-bar-container">    
                 <AutocompleteInput suggestions={deptsArr} slice={2}/>
             </div>

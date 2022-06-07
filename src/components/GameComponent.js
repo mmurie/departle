@@ -30,6 +30,8 @@ class GameComponent extends Component {
         console.log(guessData.code.slice(0,2));
         if(userInput["code"] == guessData.code.slice(0,2)){
             console.log("touve, bien joue !");
+            //callback to Auto
+            this.props.parentCallback("0", "0", "✓");
         }else{
             console.log("nope !");
             //console.log("guessData.coordinates");
@@ -45,7 +47,7 @@ class GameComponent extends Component {
     this.state.distance=getDistanceBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
     this.state.direction=getBearingBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
     //callback to Auto
-    this.props.parentCallback(distance, direction);
+    this.props.parentCallback(distance, direction, "✗");
   }
 
     render() {

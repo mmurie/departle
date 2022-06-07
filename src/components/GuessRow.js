@@ -9,7 +9,8 @@ class GuessRow extends Component {
           disabled: true,
           location: "",
           distance: 0,
-          direction: ""
+          direction: "",
+          symbol: ""
         };
     };
 
@@ -36,7 +37,7 @@ class GuessRow extends Component {
             //direction
           }
         } = this;
-        const { id, location, distance, direction } = this.props;
+        const { id, location, distance, direction, symbol } = this.props;
         
         return(
             <Fragment>
@@ -65,7 +66,8 @@ class GuessRow extends Component {
                 <input
                     className="rounded text-center w-20 ease-in-out"
                     type="text"
-                    value={"X ✓"}
+                    //value={"X ✓"}
+                    value={symbol}
                     readOnly
                 />
             </div>
