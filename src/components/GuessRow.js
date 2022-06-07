@@ -41,10 +41,11 @@ class GuessRow extends Component {
         
         return(
             <Fragment>
-            <div className="gap-4 inline-block flex text-2xl w-full justify-evenly items-center col-span-6 animate-reveal text-center">
+            <div id={symbol} className="guess gap-4 inline-block flex text-2xl w-full justify-evenly items-center col-span-6 animate-reveal text-center">
             <input
             className="rounded text-center"
                     type="text"
+                    id={symbol}
                     value={id+" - "+location}
                     onChange={onChange}
                     readOnly
@@ -53,6 +54,7 @@ class GuessRow extends Component {
             <input
                     className="rounded text-center w-56 ease-in-out"
                     type="text"
+                    id={symbol}
                     value={distance}
                     readOnly
                     disabled={disabled}
@@ -60,12 +62,14 @@ class GuessRow extends Component {
                 <input
                     className="rounded text-center w-50 ease-in-out"
                     type="text"
+                    id={symbol}
                     value={direction}
                     readOnly
                 />
                 <input
                     className="rounded text-center w-20 ease-in-out"
                     type="text"
+                    id={symbol}
                     //value={"X ✓"}
                     value={symbol}
                     readOnly
