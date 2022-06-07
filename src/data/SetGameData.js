@@ -30,29 +30,9 @@ const SetGameData = (location, data) => {
     //this.verifyData(data);
     console.log("Before verify: ");
     console.log(data);
-    //access to Game verify data to access props
-    //Game().verifyData(data);
-    //this.useGuessData();
-    //Test.setTests(data);
-    //Test(data);
-    
-    //const [usedata, setData] = useState({});
-    //setData(data)
     
     return JSON.stringify(data) ;
     
-    //const StaticData = data;
-    //Game(data);
-    
-      //return [dataGuesses, setDataGuesses];
-      //this.setData(data);
-      //return data;
   };
-
-  /*const getGameData = (data) => {
-    const [usedata, setData] = useState({});
-    setData(data)
-    return usedata;
-  };*/
 
 export default SetGameData;
