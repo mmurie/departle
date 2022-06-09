@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
 import Guesses from "./Guesses";
-import setGameData from '../data/setGameData';
+import setGameData from '../data/SetGameData';
 import GameComponent from "./GameComponent";
 class Auto extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    SetGameData(e.currentTarget.innerText.slice(0, slice), data, endGame);
+    setGameData(e.currentTarget.innerText.slice(0, slice), data, endGame);
   };
 
   onKeyDown = e => {
@@ -79,7 +79,7 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
       setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
 
