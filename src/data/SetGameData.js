@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import deptsList from "../data/departements.json";
+import deptsList from "./departements.json";
 
-const SetGameData = (location, data, endGame) => {
+/*const SetGameData = (location, data, endGame) => {
 
     if (location !== "" && data.length < 6 && !endGame) {
       if (!data.some(item => item.code == location)) {
@@ -16,12 +16,18 @@ const SetGameData = (location, data, endGame) => {
     } else {
       console.log("PERDU !");
     }
-    //this.verifyData(data);
-    console.log("Before verify: ");
-    console.log(data);
-    
-    return JSON.stringify(data) ;
-    
-  };
+  }*/
 
-export default SetGameData;
+  const setGameData = (location, data, carte = false) => {
+    if (location !== "" && !endGame && data.length < (6 * (carte ? 2 : 1))) {
+      if (!data.some(item => item.code == location)) {
+        data.push({ code: location, locationName: deptsList[location].nom, lon: deptsList[location].centre.coordinates[1], lat: deptsList[location].centre.coordinates[0] });
+      } else {
+        console.log("Departement deja cite !")
+      }
+  
+      return JSON.stringify(data);
+  
+    };
+  }
+export default setGameData;

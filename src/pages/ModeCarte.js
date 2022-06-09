@@ -10,8 +10,6 @@ const ModeForme = () => {
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
-        //deptsArr.push(value.nom);
-        //deptsArr.push({code: key, value: suggestions[key].nom});
         deptsArr.push(key + " - " + deptsList[key].nom);
     }
 
@@ -19,7 +17,7 @@ const ModeForme = () => {
         <div id="ModeClassique" className="container game">
             <CarteFrance setDepartementParent={setDepartement}></CarteFrance>
 
-            <div className="search-bar-container">
+            <div className="search-bar-container justify-evenly text-2xl">
                 <Autocomplete suggestions={deptsArr} slice={2} guessData={departement} mode={"ModeCarte"} />
             </div>
         </div>

@@ -1,13 +1,17 @@
 @import "./index.css";
-
-@import "./carte-france";
-
 @import "./autocomplete";
+@import "./_global";
+@import "./_vars";
+@import "./home";
+@import "./carte-france";
+@import "./toggle-dark-mode";
+@import "./forme-departement";
+@import "./guesses";
 
 html,
 body,
 #root {
-    min-height: 100%;
+    min-height: calc(100% + 8rem);
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -26,11 +30,3 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
-
-@import "./_global";
-@import "./_vars";
-@import "./home";
-@import "./carte-france";
-@import "./toggle-dark-mode";
-@import "./forme-departement";
-@import "./guesses";

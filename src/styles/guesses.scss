@@ -1,21 +1,19 @@
-.guess{
-    //value: $symbol;
+.guess {
     $valColor: false;
-    [id = "✓"]{
+
+    [id="✓"] {
         color: green;
         border-color: green;
         background-color: aquamarine;
     }
 
-    [value = "✗"]{
+    [value="✗"] {
         color: red;
         border-color: red;
-        //background-color: snow;
     }
 
-    [id = "✗"]{
-        //border-color: red;
+    [id="✗"] {
         background-color: snow;
     }
-    
+
 }

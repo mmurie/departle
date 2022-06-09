@@ -26,7 +26,6 @@ const Commune = (props) => {
         return (
             <div>
                 <h2 className="nom-commune">{commune["nom"] + " (pop: " + commune["population"] + ")"}</h2>
-                <p>{commune["departement"]["code"]}</p>
             </div>
         );
     }

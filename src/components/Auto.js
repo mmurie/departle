@@ -1,14 +1,8 @@
-import React, { Component, Fragment, useEffect } from "react";
+import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
-import GuessRow from "../components/GuessRow";
 import Guesses from "./Guesses";
-import deptsList from "../data/departements.json";
-//import { getData } from "./Game";
-//import {setGameData} from './SetGameData';
-import SetGameData from '../data/SetGameData';
+import setGameData from '../data/setGameData';
 import GameComponent from "./GameComponent";
-
-
 class Auto extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +15,7 @@ class Auto extends Component {
       slice: 0,
       data: [],
       errorMessage: "",
-      guessData: {}, 
+      guessData: {},
       distance: 0,
       mode: "",
       endGame: false
@@ -31,11 +25,6 @@ class Auto extends Component {
   onChange = e => {
     const { suggestions, guessData } = this.props;
     const userInput = e.currentTarget.value;
-
-    /*const filteredSuggestions = suggestions.filter(
-      suggestion =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
-    );*/
 
     //Priorité des suggestions : numéro de département -> au début du nom -> contenu dans le nom
     let filteredSuggestions = suggestions.filter(
@@ -66,10 +55,6 @@ class Auto extends Component {
     const { slice } = this.props;
     const { data, endGame } = this.state;
     
-    //getData(e.currentTarget.innerText.slice(0, slice));
-    //getData(e.currentTarget.innerText.slice(0, slice), data);
-    //SetGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
-    
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -78,9 +63,6 @@ class Auto extends Component {
       location: e.currentTarget.innerText.slice(0, slice)
     });
     SetGameData(e.currentTarget.innerText.slice(0, slice), data, endGame);
-
-    //this.getData(e.currentTarget.innerText.slice(0, slice));
-    //this.getData(e.currentTarget.innerText.slice(0, slice));
   };
 
   onKeyDown = e => {
@@ -97,11 +79,10 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      //getData(e.currentTarget.innerText.slice(0, slice));
-      //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
       SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
-      //console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
+
       //arrow key Up
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
@@ -117,39 +98,6 @@ class Auto extends Component {
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
   };
-
-  /*getData(location) {
-    const [guessData, setGuessData] = useState({});
-    useEffect(() => {
-      getRandomCommune().then(c => {
-          setCommune(c);
-          if (props.setCommuneParent) {
-              props.setCommuneParent(c);
-          }
-      });
-  }, []);
-    //if (!this.state) return;
-    //const { location } = this.props;
-    
-    /*const { data, errorMessage } = this.state;
-    console.log("getData");
-    console.log(location);
-    if (location !== "" && data.length < 6) {
-      if (!data.some(item => item.code == location)) {
-        //console.log(location);
-        data.push({ code: location, locationName: deptsList[location].nom });
-        //this.setState({data: data});
-        console.log("data = ");
-        console.log(data);
-      } else {
-        this.setState({ errorMessage: "Reponse deja utilisee" });
-        //errorMessage = "Reponse deja utilisee";
-        console.log("Departement deja cite !")
-      }
-    } else {
-      console.log("PERDU !")
-    }*/
-  //};
 
   //Callback GameComponent for distance
   handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) =>{
@@ -183,7 +131,7 @@ class Auto extends Component {
       }
     } = this;
 
-    const {mode} = this.props;
+    const { mode } = this.props;
 
     let suggestionsListComponent;
 
@@ -209,7 +157,7 @@ class Auto extends Component {
       } else {
         suggestionsListComponent = (
           <div className="no-suggestions">
-            <em>No suggestions available.</em>
+            <em>Pas de suggestions disponibles.</em>
           </div>
         );
       }
@@ -231,9 +179,6 @@ class Auto extends Component {
             value={userInput}
           />
           {suggestionsListComponent}
-          <div className="bouton">
-            <button >valider</button>
-          </div>
         </div>
 
         <div>

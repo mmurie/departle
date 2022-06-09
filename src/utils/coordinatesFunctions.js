@@ -28,6 +28,26 @@ export function getBearingBetweenTwoPoints(lat1, lon1, lat2, lon2) {
     return brng;
 }
 
+export function getBearingChar(bearing) {
+    bearing = bearing % 360;
+    if (bearing >= 22.5 * 1 && bearing < 22.5 * 3) {
+        return "🡽";
+    } else if (bearing >= 22.5 * 3 && bearing < 22.5 * 5) {
+        return "🡺";
+    } else if (bearing >= 22.5 * 5 && bearing < 22.5 * 7) {
+        return "🡾";
+    } else if (bearing >= 22.5 * 7 && bearing < 22.5 * 9) {
+        return "🡻";
+    } else if (bearing >= 22.5 * 9 && bearing < 22.5 * 11) {
+        return "🡿";
+    } else if (bearing >= 22.5 * 11 && bearing < 22.5 * 13) {
+        return "🡸";
+    } else if (bearing >= 22.5 * 13 && bearing < 22.5 * 15) {
+        return "🡼";
+    }
+    return "🡹";
+}
+
 function deg2rad(deg) {
     return deg * (Math.PI / 180)
 }
