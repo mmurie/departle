@@ -5,7 +5,7 @@ import Guesses from "./Guesses";
 import deptsList from "../data/departements.json";
 //import { getData } from "./Game";
 //import {setGameData} from './SetGameData';
-import SetGameData from '../data/SetGameData';
+import setGameData from '../data/setGameData';
 import GameComponent from "./GameComponent";
 
 
@@ -21,9 +21,8 @@ class Auto extends Component {
       slice: 0,
       data: [],
       errorMessage: "",
-      guessData: {}, 
-      distance: 0,
-      mode: ""
+      guessData: {},
+      distance: 0
     };
   };
 
@@ -64,11 +63,11 @@ class Auto extends Component {
   onClick = e => {
     const { slice } = this.props;
     const { data } = this.state;
-    
+
     //getData(e.currentTarget.innerText.slice(0, slice));
     //getData(e.currentTarget.innerText.slice(0, slice), data);
-    //SetGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
-    
+    setGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
+
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -76,7 +75,7 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    SetGameData(e.currentTarget.innerText.slice(0, slice), data);
+    setGameData(e.currentTarget.innerText.slice(0, slice), data);
 
     //this.getData(e.currentTarget.innerText.slice(0, slice));
     //this.getData(e.currentTarget.innerText.slice(0, slice));
@@ -98,7 +97,7 @@ class Auto extends Component {
       });
       //getData(e.currentTarget.innerText.slice(0, slice));
       //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
-      SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
 
       //console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
@@ -151,13 +150,13 @@ class Auto extends Component {
   //};
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing, childDataSymbol) =>{
-    if(childDataDistance && childDataBearing){
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol) => {
+    if (childDataDistance && childDataBearing) {
       //this.setState({distance: childData});
       this.state.distance = childDataDistance;
-      this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
-      this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
-      this.state.data[this.state.data.length-1]["symbol"] = childDataSymbol;
+      this.state.data[this.state.data.length - 1]["distance"] = childDataDistance;
+      this.state.data[this.state.data.length - 1]["direction"] = childDataBearing;
+      this.state.data[this.state.data.length - 1]["symbol"] = childDataSymbol;
     }
   }
 
@@ -181,7 +180,7 @@ class Auto extends Component {
       }
     } = this;
 
-    const {mode} = this.props;
+    const { mode } = this.props;
 
     let suggestionsListComponent;
 

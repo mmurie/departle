@@ -3,6 +3,7 @@ import Commune from '../components/Commune';
 import Game from '../components/Game';
 import GameComponent from '../components/GameComponent';
 import Autocomplete from "../components/Auto";
+
 import deptsList from "../data/departements.json";
 
 
@@ -23,12 +24,13 @@ const ModeClassique = () => {
             <Commune setCommuneParent={setCommune}></Commune>
 
             <div className="search-bar-container justify-evenly text-2xl">
-                <Autocomplete suggestions={deptsArr} slice={2} guessData={commune} mode={"ModeClassique"}/>
+                <Autocomplete suggestions={deptsArr} slice={2} guessData={commune} />
+
             </div>
 
             <div>{JSON.stringify(commune)}</div>
 
-            
+
         </div>
     )
     //<div><GameComponent guessData={commune} data={{}}/></div>

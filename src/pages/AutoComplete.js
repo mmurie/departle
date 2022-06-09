@@ -16,14 +16,13 @@ const AutoComplete = () => {
         deptsArr.push(value.nom);
     }
     console.log(deptsArr);
-    
+
     return (
-        <div>    
-      <h1>React Autocomplete Demo</h1>
-      <h2>Start typing and experience the autocomplete wizardry!</h2>
-      <Auto suggestions={deptsArr}/>
-    
-      </div>
+        <div>
+            <h1>React Autocomplete Demo</h1>
+            <h2>Start typing and experience the autocomplete wizardry!</h2>
+            <Auto suggestions={deptsArr} />
+        </div>
     );
 };
 
