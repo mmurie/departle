@@ -108,48 +108,6 @@ export const initalizeGame = {
   //TODO reprend les donnees du cache si partie en cours
 };
 
-/*const verifyData = (props) => {
-  console.log("test !!");
-  console.log(props);
-  
-};*/
-
-/*export const getData = (location, data) => {
-  //const [dataGuesses, setDataGuesses] = useState({});
-  //const { data, errorMessage } = this.state;
-  console.log("getData");
-  console.log(location);
-  if (location !== "" && data.length < 6) {
-    if (!data.some(item => item.code == location)) {
-      //console.log(location);
-      data.push({ code: location, locationName: deptsList[location].nom });
-      //this.setState({data: data});
-      console.log("data = ");
-      console.log(data);
-    } else {
-      const errorMessage = "Reponse deja utilisee";
-      //errorMessage = "Reponse deja utilisee";
-      console.log("Departement deja cite !")
-    }
-  } else {
-    console.log("PERDU !")
-  }
-  //this.verifyData(data);
-  console.log("Before verfiy: ");
-  console.log(data);
-  //access to Game verify data to access props
-  //Game().verifyData(data);
-  //this.useGuessData();
-  //Test.setTests(data);
-  Test(data);
-  //const StaticData = data;
-  //Game(data);
-  
-    //return [dataGuesses, setDataGuesses];
-    //this.setData(data);
-    //return data;
-};*/
-
 const Test = (data) => {
   //const [tests, setTests] = useState({});
   //setTests(data);
@@ -158,23 +116,6 @@ const Test = (data) => {
   console.log(tests);
   Game("test").verifyData(data);
 };
-
-/*export function verifyData(props) {
-  //TODO 
-  console.log("test !!");
-  console.log(props.mode);
-};*/
-
-/*const classes = useGuessData();
-
-const useGuessData = makeGuessData(data => ({
-  location: {
-    nom: "testLocation"
-  },
-  table: {
-    minWidth: 650
-  }
-}));*/
 
 
 export const endGame = () => {
