@@ -18,6 +18,11 @@ function setDistanceClass(targetDep, guessDep) {
     return "distance-" + n;
 }
 
+export function updateDepClass(target_code, guess_code) {
+    const dep = document.getElementById("dep_" + guess_code.toLowerCase());
+    dep.classList.add(setDistanceClass(target_code, guess_code));
+};
+
 const CarteFrance = (props) => {
     const [departement, setDepartement] = useState({});
 
@@ -30,11 +35,6 @@ const CarteFrance = (props) => {
         if (props.setDepartementParent) {
             props.setDepartementParent(randomDep);
         }
-
-        Object.keys(Departements).forEach((d) => {
-            const dep = document.getElementById("dep_" + d.toLowerCase());
-            dep.classList.add(setDistanceClass(randomDep["code"], d));
-        });
     }, []);
 
     return (

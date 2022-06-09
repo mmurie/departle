@@ -3,8 +3,6 @@ import '../styles/auto.scss';
 import Guesses from "./Guesses";
 import setGameData from '../data/setGameData';
 import GameComponent from "./GameComponent";
-
-
 class Auto extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +62,7 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    setGameData(e.currentTarget.innerText.slice(0, slice), data);
+    setGameData(e.currentTarget.innerText.slice(0, slice), data, this.props.mode == "ModeCarte");
   };
 
   onKeyDown = e => {
@@ -82,7 +80,7 @@ class Auto extends Component {
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
 
-      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
 
       //arrow key Up
     } else if (e.keyCode === 38) {
