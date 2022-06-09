@@ -212,8 +212,6 @@ class Auto extends Component {
         );
       }
     }
-    console.log("mode");
-    console.log(mode);
     return (
       <Fragment>
         <div>

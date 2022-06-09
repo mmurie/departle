@@ -6,7 +6,7 @@ import deptsList from "../data/departements.json";
 
 const ModeForme = () => {
     const deptsArr = [];
-    const [location, setLocation] = useState("loc");
+    const [departement, setDepartement] = useState({});
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
@@ -14,17 +14,14 @@ const ModeForme = () => {
         //deptsArr.push({code: key, value: suggestions[key].nom});
         deptsArr.push(key + " - " + deptsList[key].nom);
     }
-    /*<div>
-                <p>{JSON.stringify(departement)}</p>
-            </div>*/
+
     return (
         <div id="ModeClassique" className="container game">
-            <CarteFrance></CarteFrance>
+            <CarteFrance setDepartementParent={setDepartement}></CarteFrance>
 
             <div className="search-bar-container">
-                <Autocomplete suggestions={deptsArr} slice={2} mode={"ModeCarte"}/>
+                <Autocomplete suggestions={deptsArr} slice={2} guessData={departement} mode={"ModeCarte"} />
             </div>
-        
         </div>
     )
 };

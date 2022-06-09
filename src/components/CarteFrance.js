@@ -18,13 +18,19 @@ function setDistanceClass(targetDep, guessDep) {
     return "distance-" + n;
 }
 
-const CarteFrance = () => {
+const CarteFrance = (props) => {
     const [departement, setDepartement] = useState({});
 
     //Quand le composant est monté
     useEffect(() => {
         let randomDep = randomProperty(Departements);
         setDepartement(randomDep);
+        //give the response to game component
+        setDepartement(randomDep);
+            console.log(randomDep);
+            if (props.setDepartementParent) {
+                props.setDepartementParent(randomDep);
+            }
 
         Object.keys(Departements).forEach((d) => {
             const dep = document.getElementById("dep_" + d.toLowerCase());
