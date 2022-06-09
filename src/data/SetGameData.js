@@ -14,7 +14,6 @@ const SetGameData = (location, data) => {
     console.log(deptsList);
     if (location !== "" && data.length < 6) {
       if (!data.some(item => item.code == location)) {
-        //console.log(location);
         data.push({ code: location, locationName: deptsList[location].nom, lon: deptsList[location].centre.coordinates[1], lat: deptsList[location].centre.coordinates[0]});
         //this.setState({data: data});
         console.log("data = ");

@@ -22,7 +22,8 @@ class Auto extends Component {
       data: [],
       errorMessage: "",
       guessData: {}, 
-      distance: 0
+      distance: 0,
+      mode: ""
     };
   };
 
@@ -66,15 +67,17 @@ class Auto extends Component {
     
     //getData(e.currentTarget.innerText.slice(0, slice));
     //getData(e.currentTarget.innerText.slice(0, slice), data);
-    SetGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
+    //SetGameData(e.currentTarget.innerText.slice(0, slice), JSON.stringify(data));
     
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: "",
-      location: e.currentTarget.innerText.slice(0, slice),
+      location: e.currentTarget.innerText.slice(0, slice)
     });
+    SetGameData(e.currentTarget.innerText.slice(0, slice), data);
+
     //this.getData(e.currentTarget.innerText.slice(0, slice));
     //this.getData(e.currentTarget.innerText.slice(0, slice));
   };
@@ -178,6 +181,8 @@ class Auto extends Component {
       }
     } = this;
 
+    const {mode} = this.props;
+
     let suggestionsListComponent;
 
     if (showSuggestions && userInput) {
@@ -207,10 +212,12 @@ class Auto extends Component {
         );
       }
     }
+    console.log("mode");
+    console.log(mode);
     return (
       <Fragment>
         <div>
-          <GameComponent guessData={guessData} data={data} parentCallback={this.handleCallback} />
+          <GameComponent guessData={guessData} data={data} mode={mode} parentCallback={this.handleCallback} />
           <Guesses location={location} data={data} />
         </div>
         <br />

@@ -10,7 +10,8 @@ class GameComponent extends Component {
           distance: 0,
           direction: "",
           data: [],
-          guessData: {}
+          guessData: {},
+          mode: ""
         };
     };
 
@@ -21,7 +22,7 @@ class GameComponent extends Component {
     
   onChange = e => {
     //const { data } = this.props;
-    const { data, guessData } = this.props;
+    const { data, guessData, mode } = this.props;
 
     //verify Data
     if(data.length > 0 && guessData.code !== undefined){
@@ -36,7 +37,15 @@ class GameComponent extends Component {
             console.log("nope !");
             //console.log("guessData.coordinates");
             //console.log(guessData.centre.coordinates[1]);
-            this.getDistance(guessData, userInput);
+            //this.getDistance(guessData, userInput);
+            switch(mode){
+            case "ModeClassique": this.getDistance(guessData, userInput);
+            break;
+            case "ModeForme": this.getFormeDistance(guessData, userInput);
+            break;
+            case "ModeCarte": alert("Not implemented yet");
+            default: alert("erreur aucun mode de jeu selectionne");
+            }
         }
     };
 
@@ -46,6 +55,14 @@ class GameComponent extends Component {
     const { distance, direction } = this.state;
     this.state.distance=getDistanceBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
     this.state.direction=getBearingBetweenTwoPoints(guessData.centre.coordinates[1], guessData.centre.coordinates[0], userInput.lat, userInput.lon);
+    //callback to Auto
+    this.props.parentCallback(distance, direction, "✗");
+  }
+
+  getFormeDistance = (guessData, userInput) => {
+    const { distance, direction } = this.state;
+    this.state.distance=getDistanceBetweenTwoPoints(guessData.data_anchor_x, guessData.data_anchor_y, userInput.lat, userInput.lon);
+    this.state.direction=getBearingBetweenTwoPoints(guessData.data_anchor_x, guessData.data_anchor_y, userInput.lat, userInput.lon);
     //callback to Auto
     this.props.parentCallback(distance, direction, "✗");
   }

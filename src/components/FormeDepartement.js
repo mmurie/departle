@@ -9,7 +9,7 @@ const FormeDepartement = (props) => {
     //Quand le composant est monté
     useEffect(() => {
         getRandomSvgDepartement().then(d => {
-            //d["code"] = d["id"];
+            d["code"] = d["id"];
             setDepartement(d);
             console.log(d);
             if (props.setDepartementParent) {

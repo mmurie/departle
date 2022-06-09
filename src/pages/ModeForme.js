@@ -21,10 +21,10 @@ const ModeForme = () => {
             </div>*/
     return (
         <div id="ModeClassique" className="container game">
-            <FormeDepartement></FormeDepartement>
+            <FormeDepartement setDepartementParent={setDepartement}></FormeDepartement>
 
             <div className="search-bar-container justify-evenly text-2xl">
-                <Autocomplete suggestions={deptsArr} slice={2} guessData={departement}/>
+                <Autocomplete suggestions={deptsArr} slice={2} guessData={departement} mode={"ModeForme"}/>
             </div>
         </div>
     )
