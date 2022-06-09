@@ -23,7 +23,8 @@ class Auto extends Component {
       errorMessage: "",
       guessData: {}, 
       distance: 0,
-      mode: ""
+      mode: "",
+      endGame: false
     };
   };
 
@@ -63,7 +64,7 @@ class Auto extends Component {
 
   onClick = e => {
     const { slice } = this.props;
-    const { data } = this.state;
+    const { data, endGame } = this.state;
     
     //getData(e.currentTarget.innerText.slice(0, slice));
     //getData(e.currentTarget.innerText.slice(0, slice), data);
@@ -76,14 +77,14 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    SetGameData(e.currentTarget.innerText.slice(0, slice), data);
+    SetGameData(e.currentTarget.innerText.slice(0, slice), data, endGame);
 
     //this.getData(e.currentTarget.innerText.slice(0, slice));
     //this.getData(e.currentTarget.innerText.slice(0, slice));
   };
 
   onKeyDown = e => {
-    const { activeSuggestion, filteredSuggestions, data } = this.state;
+    const { activeSuggestion, filteredSuggestions, data, endGame } = this.state;
     const { slice } = this.props;
 
     //press Enter
@@ -98,7 +99,7 @@ class Auto extends Component {
       });
       //getData(e.currentTarget.innerText.slice(0, slice));
       //getData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
-      SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data);
+      SetGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
       //console.log(filteredSuggestions[activeSuggestion].slice(0, slice));
       //arrow key Up
@@ -151,13 +152,14 @@ class Auto extends Component {
   //};
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing, childDataSymbol) =>{
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) =>{
     if(childDataDistance && childDataBearing){
       //this.setState({distance: childData});
       this.state.distance = childDataDistance;
       this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
       this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
       this.state.data[this.state.data.length-1]["symbol"] = childDataSymbol;
+      this.state.endGame = childEndGame;
     }
   }
 
