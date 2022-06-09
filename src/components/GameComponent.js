@@ -35,16 +35,14 @@ class GameComponent extends Component {
             this.props.parentCallback("0", "0", "✓");
         }else{
             console.log("nope !");
-            //console.log("guessData.coordinates");
-            //console.log(guessData.centre.coordinates[1]);
-            //this.getDistance(guessData, userInput);
             switch(mode){
-            case "ModeClassique": this.getDistance(guessData, userInput);
-            break;
+            //case "ModeClassique": this.getDistance(guessData, userInput);
+            //break;
             case "ModeForme": this.getFormeDistance(guessData, userInput);
             break;
-            case "ModeCarte": alert("Not implemented yet");
-            default: alert("erreur aucun mode de jeu selectionne");
+            //case "ModeCarte": this.getDistance(guessData, userInput);
+            //break;
+            default: this.getDistance(guessData, userInput);
             }
         }
     };
@@ -72,8 +70,6 @@ class GameComponent extends Component {
           onChange,
           getDistance,
           state: {
-            //id,
-            //location,
             distance
           }
         } = this;
