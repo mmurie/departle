@@ -3,7 +3,6 @@ import AutoCompleteItem from "./AutocompleteItem";
 
 const AutocompleteInput = () => {
   const [isVisible = false, setVisibility] = useState(false);
-  //const showSuggestion = true;
   const showSuggestion = () => setVisibility(true);
   const hideSuggestion = () => setVisibility(false);
   return (

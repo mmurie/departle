@@ -11,7 +11,6 @@ const FormeDepartement = (props) => {
         getRandomSvgDepartement().then(d => {
             d["code"] = d["id"];
             setDepartement(d);
-            console.log(d);
             if (props.setDepartementParent) {
                 props.setDepartementParent(d);
             }

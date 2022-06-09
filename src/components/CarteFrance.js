@@ -27,10 +27,9 @@ const CarteFrance = (props) => {
         setDepartement(randomDep);
         //give the response to game component
         setDepartement(randomDep);
-            console.log(randomDep);
-            if (props.setDepartementParent) {
-                props.setDepartementParent(randomDep);
-            }
+        if (props.setDepartementParent) {
+            props.setDepartementParent(randomDep);
+        }
 
         Object.keys(Departements).forEach((d) => {
             const dep = document.getElementById("dep_" + d.toLowerCase());

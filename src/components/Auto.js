@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useEffect } from "react";
+import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
 import Guesses from "./Guesses";
 import setGameData from '../data/setGameData';

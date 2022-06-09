@@ -10,8 +10,6 @@ const ModeForme = () => {
 
     //Concatenate in order to obtain a string array
     for (const [key, value] of Object.entries(deptsList)) {
-        //deptsArr.push(value.nom);
-        //deptsArr.push({code: key, value: suggestions[key].nom});
         deptsArr.push(key + " - " + deptsList[key].nom);
     }
 

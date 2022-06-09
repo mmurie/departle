@@ -16,6 +16,4 @@ export default function updateHistory(mode, nbCoups) {
     currentHistory["Global"].push({ x: currentHistory["Global"].length + 1, y: nbCoups });
 
     localStorage.setItem("history", JSON.stringify(currentHistory));
-    console.log(JSON.stringify(currentHistory));
-
 };
