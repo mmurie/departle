@@ -12,7 +12,7 @@ const ClassicGame = () => {
     }
 
     return (
-        <div>
+        <div class="game">
             <div className="search-bar-container">
                 <AutocompleteInput suggestions={deptsArr} slice={2} />
             </div>

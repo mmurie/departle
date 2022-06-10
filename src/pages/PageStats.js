@@ -26,6 +26,9 @@ const PageStats = () => {
     return (
         <div id="pageStats" className="container">
             <Stats></Stats>
+            <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton bouton-retour"}>
+                <li>Retour</li>
+            </NavLink>
         </div>
     )
 };

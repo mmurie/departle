@@ -38,6 +38,11 @@ body {
         border-radius: 1.5rem;
         font-size: 1.5rem;
     }
+
+    &.bouton-retour {
+        position: absolute;
+        align-self: flex-start;
+    }
 }
 
 h1 {
