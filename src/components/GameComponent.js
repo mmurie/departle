@@ -41,8 +41,8 @@ class GameComponent extends Component {
         //callback to Auto
         this.props.parentCallback("0 km", " ", "✓", true);
       } else {
-        let deptCode = guessData.code.slice(0,2);
-        if(data.length >= 6) alert("le repnse etait: "+ deptCode + " - "+ Departements[deptCode].nom)
+        let deptCode = guessData.code.slice(0, 2);
+        if (data.length >= 6) alert("la bonne réponse était: " + deptCode + " - " + Departements[deptCode].nom)
         console.log("nope !");
         switch (mode) {
           case "ModeForme": this.getFormeDistance(guessData, userInput);

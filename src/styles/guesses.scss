@@ -2,18 +2,19 @@
     $valColor: false;
 
     [id="✓"] {
-        color: green;
-        border-color: green;
-        background-color: aquamarine;
+        color: $bleuFonce;
+        border-color: $bleuFonce;
+        background-color: rgba($color: $bleuClair, $alpha: 0.1);
     }
 
     [value="✗"] {
-        color: red;
-        border-color: red;
+        color: $orangeFonce;
+        border-color: $orangeFonce;
     }
 
     [id="✗"] {
-        background-color: snow;
+        color: $orangeFonce;
+        background-color: rgba($color: $orangeClair, $alpha: 0.1);
     }
 
 }
