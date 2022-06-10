@@ -43,13 +43,6 @@ input {
   border-bottom: 1px solid $grisClair;
 }
 
-
-
-
-
-
-
-
 .search-bar-container {
   position: relative;
   margin-top: 5rem;
@@ -59,4 +52,10 @@ input {
 .search-bar {
   width: 100%;
   height: 100%;
+}
+
+#ModeCarte {
+  .search-bar-container {
+    margin-top: 1rem;
+  }
 }
