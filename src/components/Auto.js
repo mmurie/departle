@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import '../styles/auto.scss';
 import Guesses from "./Guesses";
-import setGameData from '../data/setGameData';
+import setGameData from '../data/SetGameData';
 import GameComponent from "./GameComponent";
 class Auto extends Component {
   constructor(props) {
@@ -17,7 +17,8 @@ class Auto extends Component {
       errorMessage: "",
       guessData: {},
       distance: 0,
-      mode: ""
+      mode: "",
+      endGame: false
     };
   };
 
@@ -52,9 +53,8 @@ class Auto extends Component {
 
   onClick = e => {
     const { slice } = this.props;
-    const { data } = this.state;
-
-
+    const { data, endGame } = this.state;
+    
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -62,11 +62,11 @@ class Auto extends Component {
       userInput: "",
       location: e.currentTarget.innerText.slice(0, slice)
     });
-    setGameData(e.currentTarget.innerText.slice(0, slice), data, this.props.mode == "ModeCarte");
+    setGameData(e.currentTarget.innerText.slice(0, slice), data, endGame);
   };
 
   onKeyDown = e => {
-    const { activeSuggestion, filteredSuggestions, data } = this.state;
+    const { activeSuggestion, filteredSuggestions, data, endGame } = this.state;
     const { slice } = this.props;
 
     //press Enter
@@ -79,8 +79,9 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
-      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
+      //setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
 
       //arrow key Up
     } else if (e.keyCode === 38) {
@@ -99,12 +100,14 @@ class Auto extends Component {
   };
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing, childDataSymbol) => {
-    if (childDataDistance && childDataBearing) {
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) =>{
+    if(childDataDistance && childDataBearing){
+      //this.setState({distance: childData});
       this.state.distance = childDataDistance;
-      this.state.data[this.state.data.length - 1]["distance"] = childDataDistance;
-      this.state.data[this.state.data.length - 1]["direction"] = childDataBearing;
-      this.state.data[this.state.data.length - 1]["symbol"] = childDataSymbol;
+      this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
+      this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
+      this.state.data[this.state.data.length-1]["symbol"] = childDataSymbol;
+      this.state.endGame = childEndGame;
     }
   }
 

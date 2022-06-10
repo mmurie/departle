@@ -39,8 +39,10 @@ class GameComponent extends Component {
       if (userInput["code"] == guessData.code.slice(0, 2)) {
         console.log("touve, bien joue !");
         //callback to Auto
-        this.props.parentCallback("0 km", " ", "✓");
+        this.props.parentCallback("0 km", " ", "✓", true);
       } else {
+        let deptCode = guessData.code.slice(0,2);
+        if(data.length >= 6) alert("le repnse etait: "+ deptCode + " - "+ Departements[deptCode].nom)
         console.log("nope !");
         switch (mode) {
           case "ModeForme": this.getFormeDistance(guessData, userInput);
@@ -64,7 +66,7 @@ class GameComponent extends Component {
     this.state.distance = getDistanceBetweenTwoPoints(t_coords[0], t_coords[1], userInput.lat, userInput.lon).toFixed(2) + " km";
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(userInput.lat, userInput.lon, t_coords[0], t_coords[1]));
     //callback to Auto
-    this.props.parentCallback(distance, direction, "✗");
+    this.props.parentCallback(distance, direction, "✗", false);
   }
 
   getFormeDistance = (guessData, userInput) => {
@@ -77,7 +79,7 @@ class GameComponent extends Component {
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(g_coords[0], g_coords[1], t_coords[0], t_coords[1]));
 
     //callback to Auto
-    this.props.parentCallback(distance, direction, "✗");
+    this.props.parentCallback(distance, direction, "✗", false);
   }
 
   getCarteDistance = () => {
