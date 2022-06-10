@@ -81,7 +81,7 @@ class Auto extends Component {
       });
       setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
-      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
+      //setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
 
       //arrow key Up
     } else if (e.keyCode === 38) {
