@@ -54,7 +54,7 @@ class Auto extends Component {
   onClick = e => {
     const { slice } = this.props;
     const { data, endGame } = this.state;
-    
+
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -79,9 +79,8 @@ class Auto extends Component {
         userInput: "",
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
-      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame);
 
-      //setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, this.props.mode == "ModeCarte");
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame, this.props.mode == "ModeCarte");
 
       //arrow key Up
     } else if (e.keyCode === 38) {
@@ -100,17 +99,20 @@ class Auto extends Component {
   };
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) =>{
-    if(childDataDistance && childDataBearing){
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) => {
+    if (childDataDistance && childDataBearing) {
       //this.setState({distance: childData});
       this.state.distance = childDataDistance;
-      this.state.data[this.state.data.length-1]["distance"] = childDataDistance;
-      this.state.data[this.state.data.length-1]["direction"] = childDataBearing;
-      this.state.data[this.state.data.length-1]["symbol"] = childDataSymbol;
-      this.state.endGame = childEndGame;
+      this.state.data[this.state.data.length - 1]["distance"] = childDataDistance;
+      this.state.data[this.state.data.length - 1]["direction"] = childDataBearing;
+      this.state.data[this.state.data.length - 1]["symbol"] = childDataSymbol;
+      if (childEndGame && !this.state.endGame) {
+        this.setState({ endGame: childEndGame });
+      } else {
+        this.state.endGame = childEndGame;
+      }
     }
   }
-
 
   render() {
     const {
@@ -127,7 +129,8 @@ class Auto extends Component {
         data,
         errorMessage,
         guessData,
-        distance
+        distance,
+        endGame
       }
     } = this;
 
@@ -177,6 +180,7 @@ class Auto extends Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             value={userInput}
+            disabled={endGame}
           />
           {suggestionsListComponent}
         </div>

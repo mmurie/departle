@@ -39,8 +39,8 @@ const ToggleDarkMode = () => {
                 }
             }} />
             <span className="slider round"></span>
-            <span class="icon icon-sun"><FontAwesomeIcon icon={solid('sun')} /></span>
-            <span class="icon icon-moon"><FontAwesomeIcon icon={solid('moon')} /></span>
+            <span className="icon icon-sun"><FontAwesomeIcon icon={solid('sun')} /></span>
+            <span className="icon icon-moon"><FontAwesomeIcon icon={solid('moon')} /></span>
         </div>
     );
 };
