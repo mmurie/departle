@@ -5,6 +5,10 @@ export default function updateHistory(mode, nbCoups) {
         currentHistory = JSON.parse(localStorage.getItem("history"));
     }
 
+    mode = mode.substring(4);
+
+    console.log(mode);
+
     if (!["Classique", "Carte", "Forme"].includes(mode)) return;
 
 

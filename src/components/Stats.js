@@ -127,12 +127,14 @@ const StatsGraph = () => {
     };
 
     let filteredDataBar = [];
-    for (let i = 1; i <= 7; i++) {
-        let tmpData = datasets[selectedRadio].filter(val => {
-            if (val.y === i)
-                return true;
-        });
-        filteredDataBar.push({ x: i, y: tmpData.length });
+    if (datasets[selectedRadio]) {
+        for (let i = 1; i <= 7; i++) {
+            let tmpData = datasets[selectedRadio].filter(val => {
+                if (val.y === i)
+                    return true;
+            });
+            filteredDataBar.push({ x: i, y: tmpData.length });
+        }
     }
 
     const dataBar = {

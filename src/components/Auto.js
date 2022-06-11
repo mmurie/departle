@@ -3,6 +3,8 @@ import '../styles/auto.scss';
 import Guesses from "./Guesses";
 import setGameData from '../data/SetGameData';
 import GameComponent from "./GameComponent";
+import updateHistory from '../data/history';
+
 class Auto extends Component {
   constructor(props) {
     super(props);
@@ -99,14 +101,16 @@ class Auto extends Component {
   };
 
   //Callback GameComponent for distance
-  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame) => {
+  handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame, mode) => {
     if (childDataDistance && childDataBearing) {
       //this.setState({distance: childData});
       this.state.distance = childDataDistance;
       this.state.data[this.state.data.length - 1]["distance"] = childDataDistance;
       this.state.data[this.state.data.length - 1]["direction"] = childDataBearing;
       this.state.data[this.state.data.length - 1]["symbol"] = childDataSymbol;
+
       if (childEndGame && !this.state.endGame) {
+        updateHistory(mode, (mode !== "ModeCarte" ? this.state.data.length : Math.ceil(this.state.data.length / 2)));
         this.setState({ endGame: childEndGame });
       } else {
         this.state.endGame = childEndGame;
