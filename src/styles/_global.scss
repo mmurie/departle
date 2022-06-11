@@ -34,14 +34,17 @@ body {
         background-color: $primaryColor;
         width: 100%;
         height: 100%;
-        padding: 1.5rem;
-        border-radius: 1.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
         font-size: 1.5rem;
+        color: $blanc;
+        margin-bottom: 1rem;
     }
 
     &.bouton-retour {
         position: absolute;
         align-self: flex-start;
+        margin-bottom: 0rem;
     }
 }
 

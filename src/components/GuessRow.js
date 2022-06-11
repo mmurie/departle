@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import GameComponent from "./GameComponent";
 
 class GuessRow extends Component {
   constructor(props) {
@@ -43,7 +42,7 @@ class GuessRow extends Component {
             value={id + " - " + location}
             onChange={onChange}
             readOnly
-            disabled={false}
+            disabled={disabled}
           />
           <input
             className="rounded text-center w-56 ease-in-out"
@@ -59,6 +58,7 @@ class GuessRow extends Component {
             id={symbol}
             value={direction}
             readOnly
+            disabled={disabled}
           />
           <input
             className="rounded text-center w-20 ease-in-out"
@@ -67,6 +67,7 @@ class GuessRow extends Component {
             //value={"X ✓"}
             value={symbol}
             readOnly
+            disabled={disabled}
           />
         </div>
 
