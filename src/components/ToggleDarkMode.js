@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import variables from '../styles/_vars.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 const ToggleDarkMode = () => {
     const root = document.querySelector(':root');
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -18,16 +21,9 @@ const ToggleDarkMode = () => {
             if (input) input.checked = false;
         }
         localStorage.setItem("theme", theme);
-
-        console.log("---func---");
-        console.log(localStorage.getItem("theme"));
-        console.log(theme);
     }
 
     useEffect(() => {
-        console.log("---init---");
-        console.log(localStorage.getItem("theme"));
-        console.log(theme);
         updateTheme();
     }, [theme]);
 
@@ -41,11 +37,10 @@ const ToggleDarkMode = () => {
                 } else {
                     setTheme("light");
                 }
-                console.log("---before update---");
-                console.log(localStorage.getItem("theme"));
-                console.log(theme);
             }} />
             <span className="slider round"></span>
+            <span class="icon icon-sun"><FontAwesomeIcon icon={solid('sun')} /></span>
+            <span class="icon icon-moon"><FontAwesomeIcon icon={solid('moon')} /></span>
         </div>
     );
 };
