@@ -8,7 +8,6 @@ import ToggleDarkMode from '../components/ToggleDarkMode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-
 const ModeClassique = () => {
     const deptsArr = [];
 

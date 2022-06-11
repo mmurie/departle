@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { getDistanceBetweenTwoPoints, getBearingBetweenTwoPoints, getBearingChar } from '../utils/coordinatesFunctions';
 import Departements from "../data/departements.json";
 import { updateDepClass } from "./CarteFrance";
+import toast from 'react-hot-toast';
 
 class GameComponent extends Component {
   constructor(props) {
@@ -37,17 +38,22 @@ class GameComponent extends Component {
       }
 
       if (userInput["code"] == guessData.code.slice(0, 2)) {
-        console.log("trouve, bien joue !");
+        toast.success('Bien joué !!!', {
+          id: 'win'
+        });
+
         //callback to Auto
         this.props.parentCallback("0 km", " ", "✓", true);
       } else {
         let deptCode = guessData.code.slice(0, 2);
         let end = false;
         if (data.length >= (6 * (mode == "ModeCarte" ? 2 : 1))) {  //Pour un meilleur équillibrage, jusqu'à 12 essais pour le mode carte
-          //alert("la bonne réponse était: " + deptCode + " - " + Departements[deptCode].nom);
+          toast.error('Dommage !\nLa bonne réponse était : ' + deptCode + ' - ' + Departements[deptCode].nom, {
+            id: 'lose',
+            duration: 8000,
+          });
           end = true;
         }
-        console.log("nope !");
         switch (mode) {
           case "ModeForme": this.getFormeDistance(guessData, userInput, end);
             break;
