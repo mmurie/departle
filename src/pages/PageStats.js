@@ -8,20 +8,20 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 export const statsColors = {
     "Classique": {
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+        borderColor: 'rgb(129, 230, 226)',
+        backgroundColor: 'rgba(129, 230, 226, 0.5)'
     },
     "Carte": {
-        borderColor: 'rgb(0, 0, 255)',
-        backgroundColor: 'rgba(0, 0, 255, 0.5)'
+        borderColor: 'rgb(235, 167, 223)',
+        backgroundColor: 'rgba(235, 167, 223, 0.5)'
     },
     "Forme": {
-        borderColor: 'rgb(0, 255, 0)',
-        backgroundColor: 'rgba(0, 255, 0, 0.5)'
+        borderColor: 'rgb(153, 252, 129)',
+        backgroundColor: 'rgba(153, 252, 129, 0.5)'
     },
     "Global": {
-        borderColor: 'rgb(255, 0, 0)',
-        backgroundColor: 'rgba(255, 0, 0, 0.5)'
+        borderColor: 'rgb(230, 164, 129)',
+        backgroundColor: 'rgba(230, 164, 129, 0.5)'
     }
 };
 
