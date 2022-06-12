@@ -7,7 +7,10 @@ Lien vers le compte-rendu: https://docs.google.com/document/d/1X0M3UxGEkvjb43ZSk
 Vous trouverez le site Departle à l'adresse suivante: https://departle.netlify.app/
 ______________________________________________________________________________
 
-![plot](./public/logo192.png)
+<p align="center">
+  ![plot](./public/logo192.png)
+</p>
+
 
 
 # Getting Started with Create React App
