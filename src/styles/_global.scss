@@ -19,11 +19,13 @@ body {
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1024px;
-    padding-top: 3rem;
+    padding: 3rem 2rem 0 2rem;
 
     @media screen and (max-width: $breakTablet) {
         max-width: unset;
         width: 100%;
+        padding: 2rem 2rem 0 2rem;
+        margin-top: 5rem;
     }
 }
 
@@ -52,6 +54,10 @@ body {
         position: absolute;
         align-self: flex-start;
         margin-bottom: 0rem;
+
+        @media screen and (max-width: $breakTablet) {
+            top: 2rem;
+        }
     }
 }
 
@@ -100,4 +106,10 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+.nom-commune {
+    @media screen and (max-width: $breakSmall) {
+        font-size: 1.6rem;
+    }
 }

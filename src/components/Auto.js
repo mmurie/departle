@@ -171,7 +171,7 @@ class Auto extends Component {
     }
     return (
       <Fragment>
-        <div>
+        <div class="guesses">
           <GameComponent guessData={guessData} data={data} mode={mode} parentCallback={this.handleCallback} />
           <Guesses location={location} data={data} />
         </div>

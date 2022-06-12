@@ -26,19 +26,17 @@ class Guesses extends Component {
 
     return (
       <Fragment>
-        <div>
-          <div>
-            {Array.from(Array(data.length).keys()).map((index) => (
-              <GuessRow
-                id={index}
-                location={data[index].locationName}
-                countryInputRef={location}
-                distance={data[index].distance}
-                direction={data[index].direction}
-                symbol={data[index].symbol}
-              />
-            ))}
-          </div>
+        <div className="guesses">
+          {Array.from(Array(data.length).keys()).map((index) => (
+            <GuessRow
+              id={index}
+              location={data[index].locationName}
+              countryInputRef={location}
+              distance={data[index].distance}
+              direction={data[index].direction}
+              symbol={data[index].symbol}
+            />
+          ))}
         </div>
       </Fragment>
     );

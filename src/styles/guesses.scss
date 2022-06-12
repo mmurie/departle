@@ -1,5 +1,77 @@
+.guesses {
+    @media screen and (max-width: $breakLarge) {
+        line-height: 1rem !important;
+    }
+
+    @media screen and (max-width: $breakTablet) {
+        line-height: 0.75rem !important;
+    }
+
+    @media screen and (max-width: $breakSmall) {
+        line-height: 0.25rem !important;
+    }
+}
+
 .guess {
     $valColor: false;
+
+    &:first-child {
+        margin-top: 3rem;
+    }
+
+    input {
+        @media screen and (max-width: $breakLarge) {
+            width: 100%;
+            max-width: 10rem;
+
+            &:first-child {
+                max-width: unset;
+                text-overflow: ellipsis;
+            }
+
+            &:nth-child(3),
+            &:last-child {
+                max-width: 5rem;
+            }
+        }
+
+        @media screen and (max-width: $breakTablet) {
+            font-size: 1rem;
+
+            max-width: 6rem;
+
+            &:nth-child(3),
+            &:last-child {
+                max-width: 3rem;
+            }
+        }
+
+        @media screen and (max-width: $breakSmall) {
+            font-size: 0.8rem;
+            max-width: 5rem;
+            height: 2rem;
+
+            &:nth-child(3),
+            &:last-child {
+                max-width: 2rem;
+            }
+        }
+
+    }
+
+    @media screen and (max-width: $breakSmall) {
+        gap: 0.5rem;
+
+        +br {
+            line-height: 0.5rem !important;
+            font-size: 0.5rem !important;
+        }
+
+        &.text-2xl {
+            line-height: unset !important;
+            font-size: unset !important;
+        }
+    }
 
     [id="✓"] {
         color: $bleuFonce;
