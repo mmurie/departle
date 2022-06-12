@@ -1,17 +1,18 @@
-# Le compte-rendu du projet se trouve sur drive, suivant ce lien:
-
-Lien vers le compte-rendu: https://docs.google.com/document/d/1X0M3UxGEkvjb43ZSkkKHFsI8d0zAw3bPKIfAr054Xxk/edit?usp=sharing
-
-# Le site sur Netlify
-
-Vous trouverez le site Departle à l'adresse suivante: https://departle.netlify.app/
-______________________________________________________________________________
+# Bienvenue sur Departle !
 
 <p align="center">
   <img src="./public/logo192.png">
 </p>
 
+## Le compte-rendu du projet se trouve sur drive, suivant ce lien:
 
+Lien vers le compte-rendu: https://docs.google.com/document/d/1X0M3UxGEkvjb43ZSkkKHFsI8d0zAw3bPKIfAr054Xxk/edit?usp=sharing
+
+## Le site sur Netlify
+
+Vous trouverez le site Departle à l'adresse suivante: https://departle.netlify.app/
+
+______________________________________________________________________________
 
 # Getting Started with Create React App
 
