@@ -55,18 +55,18 @@ class GameComponent extends Component {
           end = true;
         }
         switch (mode) {
-          case "ModeForme": this.getFormeDistance(guessData, userInput, end);
+          case "ModeForme": this.getFormeDistance(guessData, userInput, end, mode);
             break;
-          case "ModeCarte": this.getCarteDistance(end);
+          case "ModeCarte": this.getCarteDistance(end, mode);
             break;
-          default: this.getDistance(guessData, userInput, end);
+          default: this.getDistance(guessData, userInput, end, mode);
         }
       }
     };
 
   };
 
-  getDistance = (guessData, userInput, end) => {
+  getDistance = (guessData, userInput, end, mode) => {
     const { distance, direction } = this.state;
 
     let t_coords = [];
@@ -76,10 +76,10 @@ class GameComponent extends Component {
     this.state.distance = getDistanceBetweenTwoPoints(t_coords[0], t_coords[1], userInput.lat, userInput.lon).toFixed(2) + " km";
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(userInput.lat, userInput.lon, t_coords[0], t_coords[1]));
     //callback to Auto
-    this.props.parentCallback(distance, direction, "✗", end, this.state.mode);
+    this.props.parentCallback(distance, direction, "✗", end, mode);
   }
 
-  getFormeDistance = (guessData, userInput, end) => {
+  getFormeDistance = (guessData, userInput, end, mode) => {
     const { distance, direction } = this.state;
 
     let t_coords = Departements[guessData.code]["centre"]["coordinates"];
@@ -89,12 +89,12 @@ class GameComponent extends Component {
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(g_coords[0], g_coords[1], t_coords[0], t_coords[1]));
 
     //callback to Auto
-    this.props.parentCallback(distance, direction, "✗", end, this.state.mode);
+    this.props.parentCallback(distance, direction, "✗", end, mode);
   }
 
-  getCarteDistance = (end) => {
+  getCarteDistance = (end, mode) => {
     //callback to Auto
-    this.props.parentCallback("-", "-", "✗", end, this.state.mode);
+    this.props.parentCallback("-", "-", "✗", end, mode);
   }
 
   render() {
