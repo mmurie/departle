@@ -8,7 +8,7 @@ Vous trouverez le site Departle à l'adresse suivante: https://departle.netlify.
 ______________________________________________________________________________
 
 <p align="center">
-  ![plot](./public/logo192.png)
+  <img src="./public/logo192.png">
 </p>
 
 
