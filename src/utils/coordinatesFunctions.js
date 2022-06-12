@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 //Source : https://www.movable-type.co.uk/scripts/latlong.html
 
 //Haverine formula
