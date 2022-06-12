@@ -1,0 +1,124 @@
+@import "./_vars";
+
+.popup-container {
+    position: absolute;
+    align-self: end;
+    margin-right: 6rem;
+    margin-top: -0.75rem;
+
+    .help-btn {
+        color: var(--help-color);
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .popup-box {
+        position: fixed;
+        background: rgba($color: $grisFonce, $alpha: 0.5);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
+
+        .box {
+            position: relative;
+            width: 70%;
+            margin: 0 auto;
+            height: auto;
+            max-height: 70vh;
+            margin-top: calc(100vh - 85vh - 2rem);
+            background: var(--background-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid $grisClair;
+            overflow: auto;
+            transition: all 0.3s ease-in-out;
+
+            p,
+            a,
+            li {
+                font-size: 1rem;
+            }
+
+            a {
+                color: var(--help-color);
+                text-decoration: underline;
+            }
+
+            i {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
+                color: var(--help-color);
+                font-weight: bold;
+
+            }
+
+            h3 {
+                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+                color: var(--help-color);
+            }
+
+            .end-message {
+                text-align: center;
+                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
+                font-weight: bold;
+                color: var(--help-color);
+            }
+
+            .colors {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                .color {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid $grisClair;
+
+                    @for $i from 1 through 8 {
+                        &.color-#{$i} {
+                            background-color: nth($scale, $i * 4);
+                        }
+                    }
+                }
+            }
+        }
+
+        .close-icon {
+            cursor: pointer;
+            position: fixed;
+            right: calc(15% - 1.5rem);
+            top: calc(100vh - 85vh - 3rem);
+            background: var(--background-color);
+            color: var(--text-color);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            line-height: 2.5rem;
+            text-align: center;
+            border: 1px solid $grisClair;
+            font-size: 2rem;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}

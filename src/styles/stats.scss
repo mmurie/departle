@@ -1,7 +1,11 @@
 @import "./_vars";
 
 #pageStats {
-
+    .texte {
+        font-size: 1rem;
+        color: var(--text-color);
+        transition: all 0.3s ease-in-out;
+    }
 
     input[type="radio"] {
         position: absolute;

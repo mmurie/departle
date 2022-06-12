@@ -40,6 +40,12 @@ body {
         font-size: 1.5rem;
         color: $blanc;
         margin-bottom: 1rem;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &.bouton-retour {
@@ -51,6 +57,8 @@ body {
 
 h1 {
     font-size: 3.2rem;
+    font-weight: bold;
+    color: $bleuFonce  !important;
 }
 
 h2 {
@@ -64,6 +72,7 @@ p {
 p,
 h1,
 h2,
+h3,
 a,
 li {
     color: var(--text-color);

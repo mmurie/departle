@@ -14,10 +14,13 @@ const ToggleDarkMode = () => {
         if (theme === "dark") {
             root.style.setProperty('--background-color', variables.noir);
             root.style.setProperty('--text-color', variables.blanc);
+            root.style.setProperty('--help-color', variables.primaryColor);
             if (input) input.checked = true;
         } else {
             root.style.setProperty('--background-color', variables.blanc);
             root.style.setProperty('--text-color', variables.noir);
+            root.style.setProperty('--help-color', variables.secondaryColor);
+
             if (input) input.checked = false;
         }
         localStorage.setItem("theme", theme);
@@ -32,6 +35,7 @@ const ToggleDarkMode = () => {
     return (
         <div id="toggle-dark-mode" className={"switch switch-dark-mode " + theme}>
             <input type="checkbox" onChange={(e) => {
+
                 if (e.target.checked) {
                     setTheme("dark");
                 } else {

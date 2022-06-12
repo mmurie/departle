@@ -35,7 +35,7 @@ const StatsGraph = () => {
 
     if (!localStorage.getItem("history")) {
         return (
-            <div>
+            <div className="texte">
                 Pas de stats disponibles...
             </div>
         );
