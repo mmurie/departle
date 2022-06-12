@@ -32,29 +32,29 @@ export function getBearingChar(bearing) {
     bearing = bearing % 360;
     if (bearing >= 22.5 * 1 && bearing < 22.5 * 3) {
         //return "🡽";
-        return "⭧";
+        return "↗️";
     } else if (bearing >= 22.5 * 3 && bearing < 22.5 * 5) {
         //return "🡺";
-        return "⭢";
+        return "➡️";
     } else if (bearing >= 22.5 * 5 && bearing < 22.5 * 7) {
         //return "🡾";
-        return "⭨";
+        return "↘️";
     } else if (bearing >= 22.5 * 7 && bearing < 22.5 * 9) {
         //return "🡻";
-        return "⭣";
+        return "⬇️";
     } else if (bearing >= 22.5 * 9 && bearing < 22.5 * 11) {
         //return "🡿";
-        return "⭩";
+        return "↙️";
     } else if (bearing >= 22.5 * 11 && bearing < 22.5 * 13) {
         //return "🡸";
-        return "⭠";
+        return "⬅️";
         
     } else if (bearing >= 22.5 * 13 && bearing < 22.5 * 15) {
         //return "🡼";
-        return "⭦";
+        return "↖️";
     }
     //return "🡹";
-        return "⭡";
+        return "⬆️";
 }
 
 function deg2rad(deg) {
