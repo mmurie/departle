@@ -67,7 +67,6 @@ class GameComponent extends Component {
   };
 
   getDistance = (guessData, userInput, end, mode) => {
-    const { distance, direction } = this.state;
 
     let t_coords = [];
     if (guessData.departement) t_coords = Departements[guessData.departement.code]["centre"]["coordinates"];
@@ -76,17 +75,19 @@ class GameComponent extends Component {
     this.state.distance = getDistanceBetweenTwoPoints(t_coords[0], t_coords[1], userInput.lat, userInput.lon).toFixed(2) + " km";
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(userInput.lat, userInput.lon, t_coords[0], t_coords[1]));
     //callback to Auto
+    const { distance, direction } = this.state;
+
     this.props.parentCallback(distance, direction, "✗", end, mode);
   }
 
   getFormeDistance = (guessData, userInput, end, mode) => {
-    const { distance, direction } = this.state;
-
     let t_coords = Departements[guessData.code]["centre"]["coordinates"];
     let g_coords = Departements[userInput.code]["centre"]["coordinates"];
 
     this.state.distance = getDistanceBetweenTwoPoints(t_coords[0], t_coords[1], g_coords[0], g_coords[1]).toFixed(2) + " km";
     this.state.direction = getBearingChar(getBearingBetweenTwoPoints(g_coords[0], g_coords[1], t_coords[0], t_coords[1]));
+
+    const { distance, direction } = this.state;
 
     //callback to Auto
     this.props.parentCallback(distance, direction, "✗", end, mode);
@@ -100,7 +101,6 @@ class GameComponent extends Component {
   render() {
     const {
       onChange,
-      getDistance,
       state: {
         distance
       }
