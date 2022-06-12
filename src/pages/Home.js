@@ -9,6 +9,7 @@ const Home = () => {
     return (
         <div id="home" className="container">
             <h1 className="title">DEPARTLE</h1>
+            <img className="logo" src="logo192.png" alt="logo"></img>
             <ul className="liste-boutons">
                 <NavLink to="/classique" className={(nav) => (nav.isActive ? "nav-active" : "") + " bouton"}>
                     <li><FontAwesomeIcon icon={solid('city')} /> Mode classique</li>

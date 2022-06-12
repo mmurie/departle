@@ -82,7 +82,7 @@ class Auto extends Component {
         location: filteredSuggestions[activeSuggestion].slice(0, slice)
       });
 
-      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame, this.props.mode == "ModeCarte");
+      setGameData(filteredSuggestions[activeSuggestion].slice(0, slice), data, endGame, this.props.mode);
 
       //arrow key Up
     } else if (e.keyCode === 38) {
@@ -103,14 +103,13 @@ class Auto extends Component {
   //Callback GameComponent for distance
   handleCallback = (childDataDistance, childDataBearing, childDataSymbol, childEndGame, mode) => {
     if (childDataDistance && childDataBearing) {
-      //this.setState({distance: childData});
       this.state.distance = childDataDistance;
       this.state.data[this.state.data.length - 1]["distance"] = childDataDistance;
       this.state.data[this.state.data.length - 1]["direction"] = childDataBearing;
       this.state.data[this.state.data.length - 1]["symbol"] = childDataSymbol;
 
       if (childEndGame && !this.state.endGame) {
-        updateHistory(mode, (mode !== "ModeCarte" ? this.state.data.length : Math.ceil(this.state.data.length / 2)));
+        updateHistory(mode, (mode !== "ModeCarte" ? (childDataDistance === 0 ? this.state.data.length : 7) : (this.state.data.length === 12 ? 7 : Math.ceil(this.state.data.length / 2))));
         this.setState({ endGame: childEndGame });
       } else {
         this.state.endGame = childEndGame;
@@ -171,7 +170,7 @@ class Auto extends Component {
     }
     return (
       <Fragment>
-        <div class="guesses">
+        <div className="guesses">
           <GameComponent guessData={guessData} data={data} mode={mode} parentCallback={this.handleCallback} />
           <Guesses location={location} data={data} />
         </div>
