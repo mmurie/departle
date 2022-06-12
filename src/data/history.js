@@ -7,8 +7,6 @@ export default function updateHistory(mode, nbCoups) {
 
     mode = mode.substring(4);
 
-    console.log(mode);
-
     if (!["Classique", "Carte", "Forme"].includes(mode)) return;
 
 
