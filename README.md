@@ -1,3 +1,6 @@
+_Mathieu MURIE - Mélanie LEVESQUE_ \
+_LP MiAR Groupe 1_
+ 
 # Bienvenue sur Departle !
 
 <p align="center">
